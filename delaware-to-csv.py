@@ -30,7 +30,9 @@ def scrape_DE(keywords):
                 rows = table.find_all("tr", class_=["even", "odd"])
                 
                 for row in rows:
-                    job_title = row.find("a", class_="JobTitle").text.strip()
+                    job_title_tag = row.find("a", class_="JobTitle")
+                    job_title = job_title_tag.text.strip()
+                    job_link = job_title_tag["href"]
                     work_location_full = row.find("td", class_="Locs").text.strip().replace("\n", " ").replace("  ", " ")
 
                     match = re.search(r",\s([a-zA-Z\s]+),\s([A-Za-z]{2})", work_location_full)
@@ -52,6 +54,7 @@ def scrape_DE(keywords):
                         "Department": department,
                         "Salary": salary,
                         "Filing Deadline": filing_deadline,
+                        "Job Link" : job_link
                     }
                     
                     # Append the job listing dictionary to the job listings list
@@ -62,7 +65,7 @@ def scrape_DE(keywords):
 
     # Write to CSV
     with open(csv_filename, mode="w", newline='', encoding='utf-8') as file:
-        writer = csv.DictWriter(file, fieldnames=["Job Title", "Location", "Department", "Salary", "Filing Deadline"])
+        writer = csv.DictWriter(file, fieldnames=["Job Title", "Location", "Department", "Salary", "Filing Deadline", "Job Link"])
         
         # Write the header (column names)
         writer.writeheader()
