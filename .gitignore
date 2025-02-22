@@ -1,1 +1,3 @@
 .DS_Store
+*.csv
+scrapers/__pycache__/
