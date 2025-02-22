@@ -7,7 +7,7 @@ def remove_non_ascii(text):
     """Return only ASCII characters from the given text."""
     return ''.join(c for c in text if ord(c) < 128)
 
-def scrape_indiana(keywords):
+def scrape_IN(keywords):
     BASE_URL = (
         "https://workforindiana.in.gov/search/"
         "?q={KEYWORD}"

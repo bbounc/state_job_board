@@ -38,11 +38,12 @@ def scrape_delaware(keywords):
                     
                     job_listing = {
                         "Job Title": job_title,
-                        "Link": job_link,
                         "Location": work_location,
-                        "Salary": salary,
                         "Department": department,
-                        "Application Deadline": filing_deadline
+                        "Salary": salary,
+                        "Description": None, # empty for now
+                        "Application Deadline": filing_deadline,
+                        "Link": job_link
                     }
                     job_listings.append(job_listing)
         else:

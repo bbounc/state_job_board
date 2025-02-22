@@ -13,7 +13,7 @@ def main():
     all_jobs = indiana_jobs + de_jobs
 
     # Define a unified CSV header
-    fieldnames = ["Job Title", "Link", "Location", "Salary", "Department", "Application Deadline"]
+    fieldnames = ["Job Title", "Location", "Department", "Salary", "Description", "Application Deadline", "Link"]
     csv_filename = "combined_jobs.csv"
     with open(csv_filename, mode="w", newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
