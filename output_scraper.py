@@ -17,7 +17,7 @@ STEM_KEYWORDS = [
     "biomedical", "biotech", "electrical", "mechanical", "civil engineering", "coding"
 ]
 
-THREAD_LIMIT = 5  # Number of concurrent Selenium instances
+THREAD_LIMIT = 8  # Check your corse count before running
 
 def combine_csv_files(output_file="combined_jobs.csv"):
     csv_files = [file for file in os.listdir() if file.endswith(".csv")]
@@ -45,29 +45,20 @@ def get_driver():
     options.add_argument("--log-level=3")
     service = Service("/opt/homebrew/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=options)
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(3) 
     return driver
 
 def scrape_job_details(link, results, driver, job_index, total_jobs):
     print(f"🌍 [{job_index}/{total_jobs}] Opening: {link}")
     try:
         driver.get(link)
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 7)  
         wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "h1")))
         
         # Extract all header elements (h1 to h6) and get the first non-blank one, ignoring headers and their children
         headers = driver.find_elements(By.XPATH, "//h1[not(ancestor::header)] | //h2[not(ancestor::header)] | //h3[not(ancestor::header)] | //h4[not(ancestor::header)] | //h5[not(ancestor::header)] | //h6[not(ancestor::header)]")
-        title = ""
-        for header in headers:
-            text = header.text.strip()
-            if text:
-                title = text  # Assign the first non-blank title and break
-                break
+        title = next((header.text.strip() for header in headers if header.text.strip()), "Title Not Found")
         
-        if not title:
-            print(f"⚠️ [{job_index}/{total_jobs}] No valid title found!")
-            title = "Title Not Found"
-
         description = " ".join([p.text for p in driver.find_elements(By.TAG_NAME, "p")])
         results.append((title, description, link))
         print(f"✅ [{job_index}/{total_jobs}] Successfully scraped: {title[:50]}")
@@ -75,20 +66,17 @@ def scrape_job_details(link, results, driver, job_index, total_jobs):
         print(f"❌ [{job_index}/{total_jobs}] Failed to fetch {link}: {e}")
         results.append(("Failed to fetch", "Failed to fetch", link))
 
-def process_links(df, start=0, stop=1000):
+def process_links(df):
     links = df["Job Link"].dropna().unique()
-    if len(links) < start:
-        print("⚠️ Not enough job links available. Adjusting range.")
-        start = 0
-    stop = min(stop, len(links))
+    total_jobs = len(links)
 
-    print(f"🔍 Processing {stop - start} jobs from index {start} to {stop}...")
+    print(f"🔍 Processing {total_jobs} jobs...")
 
     results = []
     job_queue = queue.Queue()
 
-    for i, link in enumerate(links[start:stop]):
-        job_queue.put((i + 1, stop - start, link))
+    for i, link in enumerate(links):
+        job_queue.put((i + 1, total_jobs, link))
 
     def worker():
         driver = get_driver()
@@ -101,8 +89,8 @@ def process_links(df, start=0, stop=1000):
     threads = []
     for _ in range(min(THREAD_LIMIT, job_queue.qsize())):
         thread = threading.Thread(target=worker)
-        threads.append(thread)
         thread.start()
+        threads.append(thread)
 
     for thread in threads:
         thread.join()
@@ -120,7 +108,7 @@ def main():
     print("📂 Combining CSV files...")
     combined_df = combine_csv_files()
     print("🌐 Scraping job listings...")
-    scraped_jobs_df = process_links(combined_df, start=0, stop=1000)
+    scraped_jobs_df = process_links(combined_df)
     scraped_jobs_df.to_csv("all_jobs.csv", index=False)
     print("🔬 Filtering for STEM-related jobs...")
     filter_jobs_by_keywords(scraped_jobs_df, STEM_KEYWORDS)
