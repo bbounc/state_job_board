@@ -18,12 +18,13 @@ Base = declarative_base()
 # Job model (SQLAlchemy)
 class Job(Base):
     __tablename__ = "jobs"
+    
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    state = Column(String)
-    deadline = Column(String)
-    pay = Column(String)
-    link = Column(String, unique=True)
+    title = Column(String, index=True, nullable=False)  # Ensure title is not nullable
+    state = Column(String, nullable=False)  # Ensure state is not nullable
+    deadline = Column(String, nullable=True)  # Allow NULL values for deadline
+    pay = Column(String, nullable=True)  # Allow NULL values for pay
+    link = Column(String, unique=True, nullable=False)  # Link must be unique and not nullable
 
 # Create database tables (if they don't exist)
 Base.metadata.create_all(bind=engine)
