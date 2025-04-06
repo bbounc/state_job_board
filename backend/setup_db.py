@@ -23,7 +23,7 @@ class Job(Base):
     state = Column(String)
     deadline = Column(String)
     pay = Column(String)
-    link = Column(String)
+    link = Column(String, unique=True)
 
 # Create database tables (if they don't exist)
 Base.metadata.create_all(bind=engine)

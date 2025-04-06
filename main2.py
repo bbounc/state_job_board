@@ -25,7 +25,7 @@ def run_scrapers():
         subprocess.run(['python', file_path], check=True)
 
 # Constants
-FUZZY_THRESHOLD = 85
+FUZZY_THRESHOLD = 50
 TITLE_KEYWORDS = ["title", "Title", "rtltextaligneligible", "JobBulletinTitle", "Working Title"]
 
 FIELD_LABELS = {
