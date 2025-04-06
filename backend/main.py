@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
-from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional
 from dotenv import load_dotenv
 import os
@@ -52,6 +52,21 @@ class JobOut(JobBase):
 
 # FastAPI instance
 app = FastAPI()
+
+# CORS middleware setup
+origins = [
+    "https://state-job-board.onrender.com",  # Add your frontend URL here
+    "http://localhost",  # Allow local development if necessary
+    "http://localhost:3000",  # Example for React frontend running locally
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Allows requests from the listed domains
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers (content-type, etc.)
+)
 
 # Dependency to get DB session
 def get_db():

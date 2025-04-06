@@ -10,6 +10,7 @@ from extract_job_fields import extract_fields_with_nlp
 import psycopg2
 from psycopg2 import sql
 from dotenv import load_dotenv
+import locale
 
 SCRAPER_DIR = os.path.join(os.path.dirname(__file__), 'scrapers')
 
@@ -22,49 +23,115 @@ def run_scrapers():
         subprocess.run(['python', file_path], check=True)
 
 # Constants
-FUZZY_THRESHOLD = 50
-TITLE_KEYWORDS = ["title", "Title", "rtltextaligneligible", "JobBulletinTitle", "Working Title"]
+FUZZY_THRESHOLD = 90
+TITLE_KEYWORDS = ["title", "Title", "rtltextaligneligible", "JobBulletinTitle", "Working Title","data-careersite-propertyid"]
 
 FIELD_LABELS = {
-    "deadline": ["Closing Date", "Deadline", "Application Due", "Apply By", "Submission Deadline", "FILING DEADLINE", 
-                 "Last Date to Apply", "Final Application Date", "End Date", "Closing Deadline", "Submission Cutoff",
-                 "Job Closes", "Job Posting Closes", "Cutoff Date", "Expiration Date", "Final Filing Date", 
-                 "Due Date", "Application Cutoff", "Apply Until", "Last Day to Submit", "Final Date", "Last Filing Date",
-                 "Recruitment Closes", "Recruitment Deadline", "Last Date", "Final Submission Date", "Last Day to Apply",
-                 "Application Close Date", "Application Period Ends", "End of Application Period", "Final Apply By Date", 
-                 "Application Deadline", "Closing Application Date", "Hiring Deadline", "Offer Deadline", "Candidate Deadline",
-                 "Resume Submission Deadline", "Application Period Close Date", "Posting Closes", "Closing Time", 
-                 "Final Opportunity to Apply", "Acceptance Deadline"],
-    "salary": ["Salary", "Pay", "Compensation", "Annual Salary", "Hiring Range - Min.",
-               "Base Pay", "Salary Range", "Pay Scale", "Salary Band", "Compensation Package", "Hourly Wage", 
-               "Annual Compensation", "Monthly Salary", "Weekly Pay", "Biweekly Pay", "Starting Salary", "Pay Grade", 
-               "Wage", "Earnings", "Gross Salary", "Net Salary", "Remuneration", "Stipend", "Pay Rate", "Rate of Pay", 
-               "Salary Expectation", "Base Salary", "Salary Expectations", "Minimum Salary", "Maximum Salary", "Hourly Rate", 
-               "Yearly Salary", "Gross Pay", "Take-home Pay", "Income", "Financial Compensation", "Payscale", "Wage Rate", 
-               "Job Pay", "Employment Compensation", "Job Earnings", "Salary Estimate", "Total Compensation", "Salary Package", 
-               "Pay Range", "Offered Salary", "Declared Salary", "Anticipated Salary", "Projected Salary", "Agreed Salary", 
-               "Stated Salary"]
-}
+            "deadline": [
+                "Closing Date", "Deadline", "Application Due", "Apply By", "Submission Deadline", "FILING DEADLINE",
+                "Last Date to Apply", "Final Application Date", "End Date", "Closing Deadline", "Submission Cutoff",
+                "Job Closes", "Job Posting Closes", "Cutoff Date", "Expiration Date", "Final Filing Date",
+                "Due Date", "Application Cutoff", "Apply Until", "Last Day to Submit", "Final Date", "Last Filing Date",
+                "Recruitment Closes", "Recruitment Deadline", "Last Date", "Final Submission Date", "Last Day to Apply",
+                "Application Close Date", "Application Period Ends", "End of Application Period", "Final Apply By Date",
+                "Application Deadline", "Closing Application Date", "Hiring Deadline", "Offer Deadline", "Candidate Deadline",
+                "Resume Submission Deadline", "Application Period Close Date", "Posting Closes", "Closing Time",
+                "Final Opportunity to Apply", "Acceptance Deadline"
+            ],
+            "salary": [
+                "Salary", "Pay", "Compensation", "Annual Salary", "Hiring Range - Min.",
+                "Base Pay", "Salary Range", "Pay Scale", "Salary Band", "Compensation Package",
+                "Hourly Wage", "Annual Compensation", "Monthly Salary", "Weekly Pay", "Biweekly Pay",
+                "Starting Salary", "Pay Grade", "Wage", "Earnings", "Gross Salary", "Net Salary",
+                "Remuneration", "Stipend", "Pay Rate", "Rate of Pay", "Salary Expectation", "Base Salary",
+                "Salary Expectations", "Minimum Salary", "Maximum Salary", "Hourly Rate", "Yearly Salary",
+                "Gross Pay", "Take-home Pay", "Income", "Financial Compensation", "Payscale",
+                "Wage Rate", "Job Pay", "Employment Compensation", "Job Earnings", "Salary Estimate",
+                "Total Compensation", "Salary Package", "Pay Range", "Offered Salary", "Declared Salary",
+                "Anticipated Salary", "Projected Salary", "Agreed Salary", "Stated Salary"
+            ]
+        }
 
 STEM_KEYWORDS = [
-    "data scientist", "data science consultant", "ai engineer", "machine learning scientist", "data mining specialist", 
-    "predictive analytics expert", "business intelligence developer", "analytics translator", "statistical modeler", 
-    "cloud data engineer", "big data consultant", "algorithm engineer", "data warehouse engineer", "computational social scientist", 
-    "marketing data analyst", "operations research analyst", "bioinformatics scientist", "financial quantitative analyst", 
-    "computer science researcher", "ux researcher", "ui researcher", "human-centered designer", "ux interaction designer", 
-    "digital product designer", "usability specialist", "accessibility ux expert", "mobile ux designer", "ux behavioral scientist", 
-    "voice interface designer", "information architect", "ux strategy consultant", "visual experience designer", 
-    "conversational ai designer", "service designer", "inclusive design specialist", "ar/vr ux developer", "software development consultant",
-    "systems optimization engineer", "cloud solutions engineer", "cybersecurity policy analyst", "computational linguist",
-    "gis data analyst", "blockchain data engineer", "healthcare data scientist", "smart cities researcher", "transportation engineer",
-    "field engineer", "project manager", "space planning analyst", "construction engineering", "information technology technician"
+    # Data Science & Analytics
+    "data scientist", "data science consultant", "ai engineer", "machine learning scientist",
+    "data mining specialist", "predictive analytics expert", "business intelligence developer",
+    "analytics translator", "statistical modeler", "cloud data engineer", "big data consultant",
+    "algorithm engineer", "data warehouse engineer", "computational social scientist",
+    "marketing data analyst", "operations research analyst", "bioinformatics scientist",
+    "financial quantitative analyst", "computer science researcher",
+
+    # UX/UI & Design
+    "ux researcher", "ui researcher", "human-centered designer", "ux interaction designer",
+    "digital product designer", "usability specialist", "accessibility ux expert",
+    "mobile ux designer", "ux behavioral scientist", "cognitive ux researcher",
+    "voice interface designer", "information architect", "ux strategy consultant",
+    "visual experience designer", "conversational ai designer", "service designer",
+    "inclusive design specialist", "ar/vr ux developer",
+
+    # Program Evaluation & Research
+    "research & evaluation specialist", "policy impact analyst", "program performance auditor",
+    "social impact researcher", "mixed methods researcher", "public policy researcher",
+    "applied econometrics expert", "community program evaluator", "nonprofit program analyst",
+    "strategic impact consultant", "government performance analyst", "implementation scientist",
+    "evidence-based policy expert", "social data analyst", "software development", "computer science",
+
+    # Policy & Budget Analysis
+    "policy analyst", "budget analyst", "public policy advisor", "economic policy analyst",
+    "fiscal impact analyst", "government finance consultant", "public administration analyst",
+    "revenue forecasting specialist", "workforce policy researcher", "cost-benefit evaluation expert",
+    "legislative budget analyst", "regulatory impact consultant", "expenditure policy strategist",
+    "tax policy analyst", "macroeconomic researcher", "public finance economist",
+    "urban development analyst", "budget and policy analyst", "financial analyst", "property analyst",
+
+    # Related Tech & Engineering
+    "software development consultant", "systems optimization engineer", "cloud solutions engineer",
+    "cybersecurity policy analyst", "computational linguist", "gis data analyst",
+    "blockchain data engineer", "healthcare data scientist", "smart cities researcher",
+    "transportation engineer", "field engineer", "project manager", "space planning analyst",
+    "construction engineering", "information technology technician", "it program manager",
+    "electronic technical specialist", "clinical coordinator", "emergency medical technician",
+    "laboratory scientist", "aquatic biologist", "assistant medical examiner",
+    "board certified behavior analyst", "behavioral health clinician", "brfss epidemiologist",
+    "iys epidemiologist", "clinical dietitian", "adjunct biology instructor", "adjunct chemistry instructor",
+    "adjunct clinical nursing instructor", "adjunct computer networking instructor",
+    "adjunct computer programming instructor", "adjunct computer technology instructor",
+    "adjunct dental assisting instructor", "adjunct electronics engineering technology instructor",
+    "environmental project manager", "environmental biologist", "veterinary technology instructor",
+    "autopsy technician", "certified nursing assistant", "certified medication aide",
+    "health care technician", "physical science researcher", "scientist", "grants specialist",
+    "state administrative manager", "departmental analyst", "ui program associate",
+
+    # Engineering roles (added)
+    "engineer", "engineering", "engineer I", "engineer II", "engineer III", "engineer IV", "engineer V", 
+    "program manager engineer", "engineering technician", "engineer program manager", "stormwater engineer",
+    "engineering specialist", "civil engineer", "mechanical engineer", "electrical engineer", "environmental engineer",
+    "software engineer", "systems engineer", "project engineer", "structural engineer", "chemical engineer",
+    "aerospace engineer", "biomedical engineer", "geotechnical engineer", "safety engineer", "process engineer",
+    "energy engineer", "systems engineering technician", "construction engineer", "transportation engineer",
+    "materials engineer", "industrial engineer", "network engineer", "telecommunications engineer"
 ]
 
-EXCLUDED_TITLES = ["CalCareers", "FOR ALL JOB SEEKERS", "STATE OF COLORADO JOB OPPORTUNITIES", "JOB OPPORTUNITIES", 
-                   "State of Tennessee Job Information", "Member Services", "Review Vacancy", "stateoftn-careers.ttcportals.com", 
-                   "Similar Jobs", "Workplace Alaska", "State Job Opportunities", "Our state. Your future. Discover the possibilities."]
+
+
+EXCLUDED_TITLES = [
+    "CalCareers", "FOR ALL JOB SEEKERS", "STATE OF COLORADO JOB OPPORTUNITIES", "JOB OPPORTUNITIES", 
+    "State of Tennessee Job Information", "Member Services", "Review Vacancy", "stateoftn-careers.ttcportals.com", 
+    "Similar Jobs", "Workplace Alaska", "State Job Opportunities", "Our state. Your future. Discover the possibilities.",
+    "Job Description and Duties", "Login", "Open Rank", "statecareers.idaho.gov", "Job Search Results",
+    "STATE OF UTAH JOB OPPORTUNITIES", "STATE OF MICHIGAN JOB OPENINGS", "CIVIL SERVICE JOBS", "Job Title", "Civil Service Jobs",
+    "State of Michigan Job Openings","State of Hawai'i, Executive Branch", "Job Seekers",".",
+    "CURRENT OPENINGS", "Job Opportunities", "State of Colorado Job Opportunities", "for All Job Seekers", "Job Opportunities", 
+    "Working Conditions", "State of Utah Job Opportunities", "WorkLife Elevated","Title Details", "Position Information",
+"Delaware Employment Link", "here", "Summary","Minimum Requirements", "Work for Indiana", "Apply Now","A Day in the Life:", "Additional Documents", "Minimum Qualifications", "Functions",
+"What You'll Need for Success:", "Job Details", "Dimensions", "Knowledge, Skills and Abilities"
+]
+
+SALARY_LABELS = ["Salary", "Pay", "Compensation", "Annual Salary", "Hiring Range - Min."]
+DEADLINE_LABELS = ["Closing Date", "Deadline", "Application Due", "Apply By", "Submission Deadline", "FILING DEADLINE"]
 
 BLUE_SYMBOL = "\033[94m🔵\033[0m"
+
 
 class JobScraperSpider(scrapy.Spider):
     name = 'job_scraper'
@@ -106,6 +173,7 @@ class JobScraperSpider(scrapy.Spider):
         self.logger.info("✅ Cleared existing data from the database.")
 
     def start_requests(self):
+        self.clear_database()
         csv_files = [file for file in os.listdir() if file.endswith(".csv")]
         for file in csv_files:
             self.processed_files.append(file)
@@ -131,6 +199,53 @@ class JobScraperSpider(scrapy.Spider):
 
     def handle_error(self, failure):
         self.logger.error(f"🚫 Failed to fetch URL: {failure.request.meta['job_link']} - {failure.value}")
+
+
+# Set the locale to the US for proper currency formatting
+    
+
+    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
+    def categorize_salary(self, salary_str):
+    # If salary is None or empty, return 'N/A'
+        if not salary_str or (isinstance(salary_str, str) and salary_str.strip().lower() in ["na", "n/a", "none", ""]):
+            return 'N/A', False  # False indicates that this should not be added to the database
+
+        if not isinstance(salary_str, str):
+            salary_str = str(salary_str)  # Ensure it's a string
+
+        def clean_number(salary_str):
+            # Remove non-numeric characters and return a float or None if invalid
+            try:
+                cleaned = ''.join(c for c in salary_str if c.isdigit() or c == '.')
+                return float(cleaned) if cleaned else None
+            except ValueError:
+                return None
+
+        # Clean the salary string (remove spaces, dollar signs, commas, etc.)
+        clean_salary = clean_number(salary_str)
+
+        # Check if clean salary is a valid number
+        if clean_salary is None:
+            return 'N/A', False  # Invalid salary, don't add to DB
+
+        # Categorize salary and convert to yearly salary
+        if clean_salary < 500:  # Hourly salary
+            yearly_salary = clean_salary * 40 * 52  # Assume 40 hours/week, 52 weeks/year
+        elif clean_salary < 10_000:  # Monthly salary
+            yearly_salary = clean_salary * 12  # Assume 12 months/year
+        else:  # Yearly salary
+            yearly_salary = clean_salary
+
+        # Check if yearly salary meets the threshold
+        if yearly_salary < 50_000:
+            return 'N/A', False  # If salary is below 50k, do not add to the DB
+
+        # If salary is valid, add a dollar sign and 'per year' to the string
+        salary_str = f"${yearly_salary:.2f} per year"
+        return salary_str, True  # Valid salary, can be added to DB
+
+
 
     def parse_job_details(self, response):
         if response.status in [403, 404]:
@@ -158,22 +273,32 @@ class JobScraperSpider(scrapy.Spider):
             deadline = extracted_fields.get("deadline", "NA")
             salary = extracted_fields.get("salary", "NA")
 
-            # Insert job into PostgreSQL database
-            self.cursor.execute('''
-                INSERT INTO jobs (state, title, pay, deadline, link)
-                VALUES (%s, %s, %s, %s, %s)
-                ON CONFLICT (link) DO NOTHING;
-            ''', (
-                response.meta['state'],
-                title,
-                salary,
-                deadline,
-                response.url
-            ))
-            self.conn.commit()
-            self.logger.info(f"✅ Job inserted into DB: {title}")
+            # Now call categorize_salary to get the adjusted salary and whether it should be inserted
+            adjusted_salary, should_insert = self.categorize_salary(salary)
+
+            # If should_insert is False, the job shouldn't be added to the database
+            if should_insert:
+                # Insert job into PostgreSQL database
+                self.cursor.execute('''
+                    INSERT INTO jobs (state, title, pay, deadline, link)
+                    VALUES (%s, %s, %s, %s, %s)
+                    ON CONFLICT (link) DO NOTHING;
+                ''', (
+                    response.meta['state'],
+                    title,
+                    adjusted_salary,
+                    deadline,
+                    response.url
+                ))
+                self.conn.commit()
+                self.logger.info(f"✅ Job inserted into DB: {title}")
+            else:
+                self.logger.info(f"❌ Job excluded based on salary: {title}")
         else:
             self.logger.info(f"❌ Not a STEM job: {title}")
+
+
+        
 
     def extract_job_title(self, response):
         headers = response.xpath("//h1 | //h2 | //h3").getall()
@@ -194,7 +319,7 @@ class JobScraperSpider(scrapy.Spider):
 
 if __name__ == '__main__':
     #run_scrapers()
-    max_links = 1
+    max_links = 1000000
 
     process = CrawlerProcess({
         'CONCURRENT_REQUESTS': 32,
