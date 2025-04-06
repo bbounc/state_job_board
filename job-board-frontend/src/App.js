@@ -6,7 +6,9 @@ import { stateOptions } from './stateOptions';
 import './App.css';
 import { useCallback } from 'react';
 
-const API_URL = process.env.BACKEND_URL
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
+
 
 // parsePay helper...
 function parsePay(payStr) {
