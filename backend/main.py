@@ -7,9 +7,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional
 from dotenv import load_dotenv
 import os
+
+# Load environment variables
+load_dotenv()
+
 # Database setup
 DATABASE_URL = os.getenv("DATABASE_URL")
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+if DATABASE_URL.startswith("sqlite"):
+    engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+else:
+    engine = create_engine(DATABASE_URL)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
@@ -26,7 +34,7 @@ class Job(Base):
 # Create database tables (if they don't exist)
 Base.metadata.create_all(bind=engine)
 
-# Pydantic models (renamed to avoid conflict with SQLAlchemy model)
+# Pydantic models
 class JobBase(BaseModel):
     title: str
     state: str
@@ -37,16 +45,22 @@ class JobBase(BaseModel):
 class JobCreate(JobBase):
     pass
 
-class JobOut(JobBase):  # Renamed to avoid conflict with SQLAlchemy model
+class JobOut(JobBase):
     id: int
-
     class Config:
-        orm_mode = True  # Tells Pydantic to treat SQLAlchemy models as dictionaries
+        orm_mode = True
 
 # FastAPI instance
 app = FastAPI()
 
-
+# CORS middleware (optional, for frontend)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Dependency to get DB session
 def get_db():
@@ -56,35 +70,32 @@ def get_db():
     finally:
         db.close()
 
-# API to fetch job listings with pagination and search filtering
+# API to fetch job listings with pagination and filters
 @app.get("/jobs", response_model=List[JobOut])
 def get_jobs(
     skip: int = 0,
     limit: int = 100,
     title: str = None,
-    state: Optional[str] = None,  # Receive state as a comma-separated string
+    state: Optional[str] = None,
     pay: Optional[str] = None,
     db: Session = Depends(get_db)
 ):
     query = db.query(Job)
-    
-    # Apply filters
     if title:
-        query = query.filter(Job.title.contains(title))  # Search by title
+        query = query.filter(Job.title.contains(title))
     if state:
-        states = state.split(',')  # Split the states into a list
-        query = query.filter(Job.state.in_(states))  # Filter by multiple states
+        states = state.split(',')
+        query = query.filter(Job.state.in_(states))
     if pay:
-        query = query.filter(Job.pay == pay)  # Filter by pay
-    
-    jobs = query.offset(skip).limit(limit).all()  # Apply pagination
+        query = query.filter(Job.pay == pay)
+    jobs = query.offset(skip).limit(limit).all()
     return jobs
 
-# API to insert jobs (for your scraper)
+# API to insert a job (used by your scraper)
 @app.post("/jobs", response_model=JobOut)
 def add_job(job: JobCreate, db: Session = Depends(get_db)):
     try:
-        db_job = Job(**job.dict())  # Convert Pydantic model to SQLAlchemy model
+        db_job = Job(**job.dict())
         db.add(db_job)
         db.commit()
         db.refresh(db_job)
