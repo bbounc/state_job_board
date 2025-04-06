@@ -8,6 +8,10 @@ import re
 import subprocess
 import os
 from extract_job_fields import extract_fields_with_nlp
+import psycopg2
+from psycopg2 import sql
+import os
+from dotenv import load_dotenv
 
 
 SCRAPER_DIR = os.path.join(os.path.dirname(__file__), 'scrapers')
@@ -133,28 +137,36 @@ BLUE_SYMBOL = "\033[94m🔵\033[0m"
 
 class JobScraperSpider(scrapy.Spider):
     name = 'job_scraper'
-
     def __init__(self, max_links=10000, *args, **kwargs):
-        super(JobScraperSpider, self).__init__(*args, **kwargs)
-        self.max_links = max_links
-        self.processed_files = []
+            super(JobScraperSpider, self).__init__(*args, **kwargs)
+            self.max_links = max_links
+            self.processed_files = []
 
-        # Connect to SQLite DB
-        db_path = os.path.join(os.path.dirname(__file__), 'backend', 'jobs.db')  # Absolute path to the backend folder
-        self.conn = sqlite3.connect(db_path)
-        self.cursor = self.conn.cursor()
-        self.clear_database()
-        self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS jobs (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                state TEXT,
-                title TEXT,
-                pay TEXT,
-                deadline TEXT,
-                link TEXT UNIQUE
-            )
-        ''')
-        self.conn.commit()
+            # Load environment variables (assuming you have a .env file with your DB credentials)
+            load_dotenv()
+
+            # Connect to PostgreSQL database (Render database connection)
+            try:
+                self.conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+                self.cursor = self.conn.cursor()
+
+                # Create the jobs table if it doesn't exist
+                self.cursor.execute('''
+                    CREATE TABLE IF NOT EXISTS jobs (
+                        id SERIAL PRIMARY KEY,
+                        state TEXT,
+                        title TEXT,
+                        pay TEXT,
+                        deadline TEXT,
+                        link TEXT UNIQUE
+                    )
+                ''')
+                self.conn.commit()
+                self.logger.info(f"{BLUE_SYMBOL} Connected to the database and created jobs table.")
+            except Exception as e:
+                self.logger.error(f"Error connecting to the database: {str(e)}")
+                raise
+
 
     def clear_database(self):
             """Clears the jobs table before inserting new data"""
@@ -203,11 +215,11 @@ class JobScraperSpider(scrapy.Spider):
             self.logger.warning(f"⚠ No job description found for {title} - Skipping")
             return
 
-        # Check if the job title matches a STEM-related keyword (fuzzy matching)
+    # Check if the job title matches a STEM-related keyword (fuzzy matching)
         fuzzy_score = max(fuzz.partial_ratio(description.lower(), keyword) for keyword in STEM_KEYWORDS)
 
         if fuzzy_score >= FUZZY_THRESHOLD:
-            # It's a STEM job, proceed with NLP extraction for salary and deadline
+        # It's a STEM job, proceed with NLP extraction for salary and deadline
             self.logger.info(f"✅ STEM job found: {title}")
 
             plain_text = " ".join(response.xpath("//body//text()").getall())
@@ -215,10 +227,11 @@ class JobScraperSpider(scrapy.Spider):
             deadline = extracted_fields.get("deadline", "NA")
             salary = extracted_fields.get("salary", "NA")
 
-            # Save to database
+        # Insert job into PostgreSQL database
             self.cursor.execute('''
-                INSERT OR IGNORE INTO jobs (state, title, pay, deadline, link)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO jobs (state, title, pay, deadline, link)
+                VALUES (%s, %s, %s, %s, %s)
+                ON CONFLICT (link) DO NOTHING;
             ''', (
                 response.meta['state'],
                 title,
@@ -230,10 +243,7 @@ class JobScraperSpider(scrapy.Spider):
         else:
             self.logger.info(f"❌ Not a STEM job: {title}")
 
-
-       
-    
-
+ 
     def extract_job_title(self, response):
         headers = response.xpath("//h1 | //h2 | //h3").getall()
         for h in headers:
@@ -298,9 +308,10 @@ class JobScraperSpider(scrapy.Spider):
         self.conn.commit()
         self.conn.close()
 
+
 if __name__ == '__main__':
     #run_scrapers()
-    max_links = 100000
+    max_links = 30
 
     process = CrawlerProcess({
         'CONCURRENT_REQUESTS': 32,

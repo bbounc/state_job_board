@@ -53,14 +53,7 @@ class JobOut(JobBase):
 # FastAPI instance
 app = FastAPI()
 
-# CORS middleware (optional, for frontend)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
 
 # Dependency to get DB session
 def get_db():
