@@ -185,7 +185,8 @@ function App() {
     setJobs(results.slice(start, start+10));
   }, [allJobs, searchTerm, fuse, sortOption, page]);
 
-  useEffect(() => { fetchJobs(); }, [stateFilter, payFilter]);
+  useEffect(() => { fetchJobs(); }, [fetchJobs]);  // Corrected dependency array
+
 
   // Handlers
   const handleStateChange = sel => setStateFilter(sel||[]);
