@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: CFID=61825254; CFTOKEN=ba9870b95f9429b-BED49188-E3A7-1D41-181727A32CA417E8; dtCookie=v_4_srv_14_sn_500EAD4DBB856566688F232A77092332_perc_100000_ol_0_mul_1_app-3A4dd53cdc7e4ff668_1

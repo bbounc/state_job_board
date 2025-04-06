@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: AWSALB=6TiSmpURc+S6ECVfpWXIadZX5bJwbTxRztrXIrZFH5s9ilI8RLKPqBI/DhyDI4MlhvSFTHrYp0wTddtS/tqBBUeBnkEEBtDjbNq3Bh73pI/EW3XcB/teEmKhaiuc; AWSALBCORS=6TiSmpURc+S6ECVfpWXIadZX5bJwbTxRztrXIrZFH5s9ilI8RLKPqBI/DhyDI4MlhvSFTHrYp0wTddtS/tqBBUeBnkEEBtDjbNq3Bh73pI/EW3XcB/teEmKhaiuc

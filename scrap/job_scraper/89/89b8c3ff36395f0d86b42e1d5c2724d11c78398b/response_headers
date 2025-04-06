@@ -1,0 +1,22 @@
+Date: Thu, 03 Apr 2025 01:51:44 GMT
+Content-Type: text/html; charset=UTF-8
+Accept-Ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+Cf-Mitigated: challenge
+Critical-Ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+Cross-Origin-Embedder-Policy: require-corp
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Origin-Agent-Cluster: ?1
+Permissions-Policy: accelerometer=(),autoplay=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()
+Referrer-Policy: same-origin
+Server-Timing: chlray;desc="92a4ec3049c1e5e9"
+X-Content-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Cf-Chl-Out: huT4kk/J67eWUVJ6VXEYGunhRujN0gcjvQgf5EhlA9O+VtzK2pJrv+OncFkvPoMI8JYad5YR8cm/eRfPS+ysevihj8waU3tvx7Mq7UpzC9uciU3fqSrHW20rMsXqLp/5gbPoxsRrmUCra85+kXUpKg==$dyubYMhtIGeBuzX2MxH4yw==
+Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: __cf_bm=U6M7uDGqDUDf8Zznx8qrYle2s9Pacr9pSdg2mCiUeJY-1743645104-1.0.1.1-ySVLaf3RZXQi_uM3bjt2BLsTfG68.W2tWyKzHbGR_mtn0BG58c4LJpp1cxE6pUL9LYuvjLdYpJWv1ts7576Tu6kv32RBoj2cYDZBFdcJ9guTVFdRruj6oupP.fYAbhn7; path=/; expires=Thu, 03-Apr-25 02:21:44 GMT; domain=.statecareers.idaho.gov; HttpOnly; Secure; SameSite=None
+Vary: Accept-Encoding
+Server: cloudflare
+Cf-Ray: 92a4ec3049c1e5e9-IAD
+Content-Encoding: gzip

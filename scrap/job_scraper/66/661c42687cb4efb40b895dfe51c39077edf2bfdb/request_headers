@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: AdminFolder=AdminlV; JobApsFolder=MD; ASPSESSIONIDCAASSBCC=KNLGDIHCGGAMGEMIEMOBDFKC; job-sessionid=ffffffff0905a60045525d5f4f58455e445a4a423660

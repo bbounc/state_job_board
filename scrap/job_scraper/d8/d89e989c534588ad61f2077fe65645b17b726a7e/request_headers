@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: ASP.NET_SessionId=x5huvrtvfotkr3100wcbkeym; visitor_Id=0638889d-18db-498c-9480-adb6f48e3ad6; __RequestVerificationToken=7PtJurLAYxcaWplmIQ2kt4q-Q4q9JTYHUVB24XyyipvjXMiTXg0kfjx49E9lGz4lIa9TLtSpMH89UJZzlQqjdBG7OoY1; job-referrer=referrerUrl=&referrerDomain=; session_Id=d2673712-b87a-420d-a231-78b4b4a0401d

@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: ApplicationGatewayAffinityCORS=c207f16914bac20116c1077f6a10eba5; ApplicationGatewayAffinity=c207f16914bac20116c1077f6a10eba5; ASP.NET_SessionId=3ggynssahfe2prhyj0o55cre; LastBroadcastMessage=203

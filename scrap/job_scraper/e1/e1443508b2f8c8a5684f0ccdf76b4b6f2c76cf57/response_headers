@@ -1,0 +1,12 @@
+Date: Thu, 03 Apr 2025 02:29:45 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=63072000
+X-Oneagent-Js-Injection: true
+Set-Cookie: CFID=61825241; Expires=Fri, 04 Apr 2025 02:29:45 GMT; Path=/; HttpOnly
+Set-Cookie: CFTOKEN=4cc3ee4b12a7955a-BED48BFF-BD5B-E9A8-2DC34697769D5932; Expires=Fri, 04 Apr 2025 02:29:45 GMT; Path=/; HttpOnly
+Set-Cookie: dtCookie=v_4_srv_7_sn_7C6D9F81E4A2E1EE40846832D49D1D22_perc_100000_ol_0_mul_1_app-3A4dd53cdc7e4ff668_1; Path=/; Domain=.ny.gov
+X-Xss-Protection: 1; mode=block
+Content-Security-Policy: frame-ancestors 'self';
+Server-Timing: dtSInfo;desc="0", dtRpid;desc="-1536075747"
+Content-Type: text/html;charset=UTF-8

@@ -1,0 +1,5 @@
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/2.12.0 (+https://scrapy.org)
+Accept-Encoding: gzip, deflate
+Cookie: JSESSIONID=BF8E79D6C56DC2ED9A689E7721308C02.TC_3049_3050; ORA_OTSS_SESSION_ID=2d3311735e010ced827e72d87c69a1ebcd7b72b2ec1af5718c7b5df16604dd08.ga.lfig1a-app-004.a.lfig.oraclevcn.com

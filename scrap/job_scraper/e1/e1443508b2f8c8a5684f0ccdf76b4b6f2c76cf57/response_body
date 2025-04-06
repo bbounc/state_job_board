@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) --> 
+<script type="text/javascript" src="/ruxitagentjs_ICA7NVfqrux_10309250310100759.js" data-dtconfig="app=4dd53cdc7e4ff668|cuc=c55jnn85|agentId=f93be3ac6a005787|mel=100000|expw=1|featureHash=ICA7NVfqrux|dpvc=1|lastModification=1743515689425|tp=500,50,0|rdnt=1|uxrgce=1|agentUri=/ruxitagentjs_ICA7NVfqrux_10309250310100759.js|reportUrl=/rb_ff8821ed-3c09-41dd-ad29-f1af6647ca98|rid=RID_309742380|rpid=-1536075747|domain=ny.gov"></script><script async src=https://www.googletagmanager.com/gtag/js?id=G-D2X0LX9SEH></script> 
+<script> window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date()); 
+
+gtag('config', 'G-D2X0LX9SEH'); 
+</script>
+	
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		
+		<link type="text/css" rel="stylesheet" media="all" href="/assets/css/basic.css" />
+		
+	<link type="text/css" rel="stylesheet" media="all" href="/assets/css/jquery-ui.min.css" />
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+
+			<title>StateJobsNY - Public Information: Review Vacancy</title>
+			<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+			<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+			
+			<link type="text/css" rel="stylesheet" media="all" href="/assets/css/colorTip.css" />
+			<script type="text/javascript" src="/assets/scripts/javascript/colortip-1.0-jquery.js"></script>
+			<script type="text/javascript" src="/assets/scripts/javascript/lib.js"></script>
+			
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#vacancyDetails').tabs();
+				construct();
+			});
+		</script>
+		<style type="text/css">
+			#agency_pk_id {
+				max-width: 300px;
+			}
+			div.note {
+				border: 2px solid #000;
+				margin-right: 20px;
+				margin-bottom: 15px;
+			}
+			div.note div {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="nygov-universal-navigation" class="nygov-universal-container" data-iframe="true" data-updated="2014-11-07 08:30">
+    <noscript>
+        <iframe width="100%" height="86px" src="//static-assets.ny.gov/load_global_menu/ajax?iframe=true" frameborder="0" style="border:none; overflow:hidden; width:100%; height:86px;" scrolling="no">
+            Your browser does not support iFrames
+        </iframe>
+    </noscript>
+    <script type="text/javascript">
+        var _NY = {
+            HOST: "static-assets.ny.gov",
+            BASE_HOST: "www.ny.gov",
+            hideSettings: false,
+            hideSearch: false
+        };
+        (function (document, bundle, head) {
+            head = document.getElementsByTagName('head')[0];
+            bundle = document.createElement('script');
+            bundle.type = 'text/javascript';
+            bundle.async = true;
+            bundle.src = "//static-assets.ny.gov/sites/all/widgets/universal-navigation/js/dist/global-nav-bundle.js";
+            head.appendChild(bundle);
+        }(document));
+    </script>
+</div>
+		<div id="leftShadow">
+			<div id="rightShadow">
+				<div id="mainContent" class="public">
+					<div id="header" style="border-top:1px solid #ccc;">
+	<a href="/index.cfm" title="Link to StateJobsNY home page" ><img src="/assets/images/nys-statejobsny-500x90.png" alt="StateJobsNY" id="seal" /></a>
+	
+
+</div>
+
+<div id="nav">
+	<a href="#content" >Skip to Content</a><br />
+	<ul>
+		<li class="localNavItem"><a href="/public/index.cfm">Home</a></li>
+		<li class="localNavItem"><a href="/public/howItWorks.cfm">How to Get a State Job</a></li>
+		<li class="localNavItem"><a href="/public/faq.cfm">FAQs</a></li>
+		<li class="localNavItem"><a href="/public/vacancyTable.cfm">Vacancies</a></li>
+		<li class="localNavItem"><a href="/public/search.cfm">Search Vacancies</a></li>
+		
+		<li class="localNavItem"><a href="/public/offsitePostings.cfm">Other State Listings</a></li>
+	</ul>
+	<nav class="navSection">
+		<div>Helpful Links</div>
+		<ul>
+			<li><a href="http://www.cs.ny.gov/examannouncements/types/oc/" >Exam Announcements for the General Public<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+			<li><a href="http://www.cs.ny.gov/jobseeker/gettingajob/empnys.cfm">Explore Opportunities<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+			<li><a href="http://www.cs.ny.gov/rp55/">Workers with Disabilities Program<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+			<li><a href="http://www.cs.ny.gov/jobseeker/faq/reinstatement.cfm">Reinstatement<img src="/assets/images/external-link.gif"alt="Leaving the StateJobsNY site"  /></a></li>
+            <li><a href="https://oer.ny.gov/salary-schedules">Salary Schedules<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+			<li><a href="https://oer.ny.gov/state-union-contracts">Unions/Units<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+			<li><a href="https://oer.ny.gov/training-and-professional-development">Training and Development<img src="/assets/images/external-link.gif" alt="Leaving the StateJobsNY site" /></a></li>
+		</ul>
+	</nav>
+</div>
+
+					<div id="content">
+						
+						
+						<div class="note">
+							<div>
+								<strong>Please note:</strong> State agencies that contact job applicants do not usually request personal or financial information via text message or over the phone in connection with your response to a job posting. If you are contacted for such information by these methods, or any other method, please verify the identity of the individual before transmitting such information to that person.
+							</div>
+						</div>
+						
+						
+							
+								<div class="note">
+									<div>
+										<em>Note: For questions about the job posting, please contact the agency that posted this position by using the contact information provided on the &quot;Contact&quot; tab for the position.</em>
+									</div>
+								</div>
+							
+						
+						<h2>Review Vacancy</h2>
+						
+	<div style="border: 3px solid #C00; width: 500px; height: 80px;">
+		<div style="float: left; padding: 20px;">
+				<img src="../assets/images/alert_icon.png" width="50" height="46" alt="Alert Notice" /></div>
+		<div style="color: #C00; padding-top: 32px; font-weight: bold; font-size: 16px;">
+			
+			The vacancy you are looking for does not exist.
+	  </div>
+	</div>
+
+
+
+						
+					</div>
+					<div id="organDonor">
+	<p><a href="https://donatelife.ny.gov/register/"><u>Become an Organ Donor - Enroll Today</u></a></p>
+</div>
+
+	<div class="centered" id="footer">
+		
+	<p><a href="/public/faq.cfm">FAQs</a>
+		&nbsp;&bull;&nbsp;<a href="https://www.cs.ny.gov/rp55/">Workers with Disabilities (55b/c)</a>&nbsp;&bull;&nbsp;<a href="https://www.cs.ny.gov/jobseeker/" >Civil Service Exams</a></p>
+	
+	<p><strong>State Agencies:</strong> <a href="http://www.cs.ny.gov" >Department of Civil Service</a>&nbsp;&bull;&nbsp;<a href="http://osc.state.ny.us/" >Office of the State Comptroller</a></p>
+	
+	<p><strong>OER Link:</strong> <a href="https://oer.ny.gov/labor-relations">Employee Unions and Bargaining Units</a></p>
+	
+	<p> <a href="https://www.cs.ny.gov/examannouncements/types/oc/">Exam announcements</a>&nbsp;&bull;&nbsp;<a href="http://ny.gov" >General Information about NYS Government</a></p>
+	<br />
+	<p>&copy; 2025 NYS Department of Civil Service</p>
+	<p>StateJobsNY &#8480; 2025 NYS Department of Civil Service</p>
+	
+	<p><a href="/accuracy.cfm">Accuracy</a>&nbsp;&bull;&nbsp;<a href="/privacy.cfm">Privacy</a>&nbsp;&bull;&nbsp;<a href="/accessibility.cfm">Accessibility</a>&nbsp;&bull;&nbsp;<a href="/contact.cfm">Contact</a></p>
+
+	</div>
+
+				</div>
+			</div>
+		</div>
+		
+			<div id="bottomShadowLeft">
+				<div id="bottomShadowRight">
+					<div id="bottomInnerShadow"></div>
+				</div>
+			</div>
+		<div id="nygov-universal-footer" class="nygov-universal-container">
+    <noscript>
+        <iframe id="nygov-universal-footer-frame" class="nygov-universal-container" width="100%" height="200px" src="//static-assets.ny.gov/load_global_footer/ajax?iframe=true" data-updated="2014-11-07 08:30" frameborder="0" style="border:none; overflow:hidden; width:100%; height:200px;" scrolling="no">
+            Your browser does not support iFrames
+        </iframe>
+    </noscript>
+</div>
+	</body>
+</html>

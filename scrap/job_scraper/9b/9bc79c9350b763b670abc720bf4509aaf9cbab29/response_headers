@@ -1,0 +1,16 @@
+Content-Length: 9200
+Content-Type: text/html;charset=utf-8
+Server: Apache
+X-Dispatcher: dispatcher3usgovwest1-28580712
+X-Vhost: publish illinois
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Encoding: gzip
+Expires: Thu, 03 Apr 2025 03:52:48 GMT
+Cache-Control: max-age=0, no-cache, no-store
+Pragma: no-cache
+Date: Thu, 03 Apr 2025 03:52:48 GMT
+Vary: Accept-Encoding
+Set-Cookie: AWSALB=0q4/CXhtBXd89AwGVNvHb4dOjyFBvgsoNoYS/sFBcyv0BNj8m4N8P5mYmFSq1PS5qei84Ez1nCrX24BrhZvr7Lqhm18Sna0j4ugFV61hhnHAUOkF9m6P4Xknbw0o; Expires=Thu, 10 Apr 2025 03:52:48 GMT; Path=/
+Set-Cookie: AWSALBCORS=0q4/CXhtBXd89AwGVNvHb4dOjyFBvgsoNoYS/sFBcyv0BNj8m4N8P5mYmFSq1PS5qei84Ez1nCrX24BrhZvr7Lqhm18Sna0j4ugFV61hhnHAUOkF9m6P4Xknbw0o; Expires=Thu, 10 Apr 2025 03:52:48 GMT; Path=/; SameSite=None; Secure
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains

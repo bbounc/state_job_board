@@ -1,0 +1,12 @@
+Date: Thu, 03 Apr 2025 02:27:34 GMT
+Server: Apache
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Set-Cookie: JSESSIONID=w5~6ACB2AF2D8AA9D19E0DEF77295A4880D; Path=/; Secure; HttpOnly
+Referrer-Policy: strict-origin-when-cross-origin
+Cache-Control: no-cache, no-store, must-revalidate, no-transform
+Pragma: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html;charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block

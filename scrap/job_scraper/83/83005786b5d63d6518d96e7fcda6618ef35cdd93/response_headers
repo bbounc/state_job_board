@@ -1,0 +1,12 @@
+Date: Thu, 03 Apr 2025 02:27:37 GMT
+Server: Taleo Web Server
+Strict-Transport-Security: max-age=63072000;includeSubDomains
+Content-Security-Policy: upgrade-insecure-requests;frame-ancestors 'self' *.facebook.com *.tbe.com;
+Referrer-Policy: no-referrer-when-downgrade, strict-origin-when-cross-origin
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache
+P3P: CP='This is not a P3P policy!'
+Content-Type: text/html;charset=UTF-8
+Set-Cookie: JSESSIONID=180997C3460C0653994D9B7DE6F8F5CD.TC_3049_3050; Path=/; Secure; HttpOnly;SameSite=None;Secure;
+Set-Cookie: ORA_OTSS_SESSION_ID=8a572cd6344250ded94a794c3ac43f3927eab8961a62b9f50a2bf1f42db9c101.ga.lfig1a-app-004.a.lfig.oraclevcn.com; Path=/; Secure; HttpOnly;SameSite=None;Secure;

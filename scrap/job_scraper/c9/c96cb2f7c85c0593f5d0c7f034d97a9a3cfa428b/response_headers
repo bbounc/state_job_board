@@ -1,0 +1,13 @@
+Content-Length: 23780
+Cache-Control: no-cache,no-store, must-revalidate, private,no-cache
+Pragma: no-cache
+Content-Type: text/html
+Content-Encoding: gzip
+Expires: Mon, 01 Jan 1990 08:00:00 GMT
+Vary: Accept-Encoding
+Set-Cookie: AdminFolder=AdminlV; path=/
+Set-Cookie: JobApsFolder=CT; path=/CT
+Set-Cookie: job-sessionid=ffffffff0905a60045525d5f4f58455e445a4a423660;expires=Thu, 03-Apr-2025 10:27:31 GMT;path=/;secure;httponly
+X-Powered-By: ASP.NET
+X-Frame-Options: SAMEORIGIN
+Date: Thu, 03 Apr 2025 02:29:38 GMT

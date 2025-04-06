@@ -1,0 +1,22 @@
+Date: Thu, 03 Apr 2025 03:52:13 GMT
+Content-Type: text/html; charset=UTF-8
+Accept-Ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+Cf-Mitigated: challenge
+Critical-Ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+Cross-Origin-Embedder-Policy: require-corp
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Origin-Agent-Cluster: ?1
+Permissions-Policy: accelerometer=(),autoplay=(),browsing-topics=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),interest-cohort=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=()
+Referrer-Policy: same-origin
+Server-Timing: chlray;desc="92a59cacf9ec44f6"
+X-Content-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Cf-Chl-Out: oW8V3niD9jVoBEcSNMLcZn/eWm/uJ0SRWEg/Gwa36IyPZjLNzRpJR2apPipxhQzud8EipSN3Ti11wm8ltTlkE9E+iTxiLNeMt0Rm/bsAdQlSr1F3zQVgmQJnNOTxdAuuEO5mGeeODXoTeH6x2vMU5w==$WRCdORf7ufiisAAbIeOI8w==
+Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: __cf_bm=OHCG8mRov1NSs65eZfkC33aOPrDhjrSFIwfGkSMQ62w-1743652333-1.0.1.1-T8TxCio9RzygXa2QD185NLrI1eowKh28d0g2bgA88BbjUpFqJpcSOr.L1lBkvChBd_YYjDwa.hUgBsc2tk2wpS1JTsXeVoCwCBwMqfRdF45vLP4q3JAO8tnL09THC1Dj; path=/; expires=Thu, 03-Apr-25 04:22:13 GMT; domain=.ttcportals.com; HttpOnly; Secure; SameSite=None
+Vary: Accept-Encoding
+Server: cloudflare
+Cf-Ray: 92a59cacf9ec44f6-ATL
+Content-Encoding: gzip

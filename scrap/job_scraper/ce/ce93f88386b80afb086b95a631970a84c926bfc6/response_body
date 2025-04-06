@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><title>
+	CalCareers
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Use highest compatibility mode -->
+    <meta name="HandheldFriendly" content="True" />
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="MobileOptimized" content="320" />
+    <!-- for Blackberry, AvantGo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=1" />
+    <!-- for Windows mobile -->
+
+    
+
+    <!-- CSS -->
+    
+    
+
+    <link id="lnk1a" href="../../Content/GoogleFonts/googleapis.SansPro.css" rel="stylesheet" type="text/css" /><link id="lnk2a" href="../../Content/v5/cagov.core.min.css" rel="stylesheet" /><link id="lnk3a" href="../../Content/v5/colorscheme-oceanside.css" rel="stylesheet" /><link id="Link5" href="../../Content/all.min.css" rel="stylesheet" /><link id="lnk5a" href="../../Content/bootstrap.overrides.css" rel="stylesheet" /><link id="lnk6a" href="../../Content/v5/footable.bootstrap.min.css" rel="stylesheet" /><link id="lnk7a" href="../../Content/v5/ecos-custom.css" rel="stylesheet" /><link id="Link4" href="../../Content/v5/ecos-modal.css" rel="stylesheet" /><link id="lnk7b" href="../../Content/v5/checkradiobutton.css" rel="stylesheet" /><link id="lnk8a" href="../../Content/v5/ecos-spacing.css" rel="stylesheet" /><link id="lnk9a" href="../../Content/v5/ecos-legacy.css" rel="stylesheet" /><link id="lnk10b" href="../../Content/themes/base/core.css" rel="stylesheet" /><link id="Link1" href="../../Content/themes/base/theme.css" rel="stylesheet" /><link id="lnk10a" href="../../Content/themes/base/datepicker.css" rel="stylesheet" /><link id="Link2" href="../../Content/jquery.qtip.min.css" rel="stylesheet" /><link id="Link3" href="../../Content/toastr.min.css" rel="stylesheet" /><link id="Link6" href="../../Content/WebFonts/PublicSans.css" rel="stylesheet" type="text/css" /><link rel="apple-touch-icon" sizes="144x144" href="/images/v5/template2014/apple-touch-icon-144x144.png" />
+    <!-- For iPad 3-->
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/v5/template2014/apple-touch-icon-114x114.png" />
+    <!-- For iPhone 4 -->
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/v5/template2014/apple-touch-icon-72x72.png" />
+    <!-- For iPad 1-->
+    <link rel="apple-touch-icon" href="/images/v5/template2014/apple-touch-icon-57x57.png" />
+    <!-- For iPhone 3G, iPod Touch and Android -->
+    <link rel="shortcut icon" href="/images/v5/template2014/apple-touch-icon-57x57.png" />
+    <!-- For Nokia -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    <pagemap>
+        <dataobject type="thumbnail">
+            <attribute name="src" value="https://calcareers.ca.gov/images/v5/Ca-Gov-Logo-Gold.svg" />
+            <attribute name="width" value="44" />
+            <attribute name="height" value="32" />
+        </dataobject>
+    </pagemap>
+
+    
+
+    <!-- Primary Meta Tags -->
+    <title>Meta Tags — Preview, Edit and Generate</title>
+    <meta name="title" content="Meta Tags — Preview, Edit and Generate" />
+    <meta name="description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://calcareers.ca.gov/CalHrPublic/Jobs/JobPosting.aspx?JobControlId=467478" />
+    <meta property="og:title" content="INFORMATION TECHNOLOGY SPECIALIST I" />
+    <meta property="og:description" content="Looking to make a difference? Join our strong and mighty workforce. We offer benefits and growth opportunities and impact the lives of millions of Californians." />
+    <meta property="og:image" content="https://www.calcareers.ca.gov/images/social/stateseal250.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://calcareers.ca.gov/CalHrPublic/Jobs/JobPosting.aspx?JobControlId=467478" />
+    <meta property="twitter:title" content="INFORMATION TECHNOLOGY SPECIALIST I" />
+    <meta property="twitter:description" content="Looking to make a difference? Join our strong and mighty workforce. We offer benefits and growth opportunities and impact the lives of millions of Californians." />
+    <meta property="twitter:image" content="https://www.calcareers.ca.gov/images/social/stateseal250.png" />
+</head>
+
+<body>
+
+    <style>
+        .theadcss {
+            display: none;
+            font-size: 0.26em;
+        }
+    </style>
+    <header class="onlyprint">
+        <img src="../../images/v5/california-state-jobs-logo.png" alt="Jobs CA Logo" />
+    </header>
+    <div id="head-search"></div>
+
+    <form method="post" action="./JobPosting.aspx?JobControlId=467478" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvuYFzGCe5ZPljA3pxh7bpU2jKXy2XqlKPLcApapSk9YqaPL-6_3brjemUN384VekRbirX7NfL6Zxg-1ZwR8CFVKV1wzxvvRRqX25bJmFgG-B3uPd2pRsIzOcSrPQDdTr9VMWil43Zw6TzRSRGpth_EE1&amp;t=2a9d95e3" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0CAF3BF1" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="vmgfOXR0QRyYoMi/tApW2E+KaDcDTK1A8+5rvZJJYpJQBfqFbbxLP5far2/xop61TssYYP4uXXmVPoGzM5JdNHdl5O8tBWyhMnWnmpCgINjO6QQ8DBQJPs63FwrHm3/SPguOizpiSBWoMDyPvab61cI8gN0cAw+vwu+ecN6edaiAWA4iOirFbmjkwQF/fvQOQFPI8yw0sxSIsAG7j39AI/X4L7PE3Jsd9NToA9CtKO+0A9C+5gNWISuuCK/Qn7BWNfm9pYUyIX5denLx1uGJjvd5PUatM7UgeeBYxF++viE=" />
+
+        <header role="banner" id="header" class="global-header fixed">
+            <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
+
+            
+
+            
+                <!-- Settings Bar -->
+                <div class="site-settings section section-standout collapse collapsed" role="alert" id="siteSettings">
+    <div class="container  p-y">
+        <button type="button" class="close" data-toggle="collapse" data-target="#siteSettings" aria-expanded="false" aria-controls="siteSettings" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <div class="btn-group btn-group-justified-sm" role="group" aria-label="contrastMode">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary disableHighContrastMode">Default</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary enableHighContrastMode">High Contrast</button>
+            </div>
+        </div>
+        <div class="btn-group" role="group" aria-label="textSizeMode">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary resetTextSize">Reset</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary increaseTextSize">
+                    <span class="hidden-xs">Increase Font Size</span>
+                    <span class="visible-xs">Font <small class="ca-gov-icon-plus-line"></small>
+                    </span>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary decreaseTextSize">
+                    <span class="hidden-xs">Decrease Font Size</span>
+                    <span class="visible-xs">Font <small class="ca-gov-icon-minus-line"></small></span>
+                </button>
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-primary clipboard-activeonhover">Save links on hover</button> -->
+    </div>
+
+</div>
+
+
+
+
+
+<div class="site-settings section section-standout collapse collapsed" role="alert" id="broadcastMessages">
+    <div class="container  p-y">
+
+        <div class="row">
+            <div class="col-md-11">
+
+                <div>
+
+                    
+
+                            <div class="col-md-12">
+                                <span class="orangeColor">
+                                    CalHR Job Center:
+                                </span>
+
+                                <span>
+                                    The CalHR Job Center, located at 1810 16th Street, Sacramento, CA 95811, will be open on the 1st and 3rd Tuesdays of the month. Our hours are 9:00 AM - 12:00 PM and 1:00 PM - 3:00 PM. A staff member will be available to assist you in navigating our CalCareer website for job opportunities. This is not a job fair event.
+                                </span>
+                            </div>
+
+                        
+
+                            <div class="col-md-12">
+                                <span class="orangeColor">
+                                    Workers' Compensation Insurance Supervisor 2, SCIF Examination:
+                                </span>
+
+                                <span>
+                                    The Workers' Compensation Insurance Supervisor 2, State Compensation Insurance Fund exam will be offline for maintenance beginning Thursday 2/20/2025 and will be back online on Tuesday 4/15/2025. We apologize for any inconvenience.
+                                </span>
+                            </div>
+
+                        
+
+                            <div class="col-md-12">
+                                <span class="orangeColor">
+                                    Manager, SCIF Series Examinations:
+                                </span>
+
+                                <span>
+                                    The Manager 1, State Compensation Insurance Fund and Manager 2, State Compensation Insurance Fund exams will be offline for maintenance beginning Thursday 02/20/2025 and will be back online on Tuesday 4/15/2025. We apologize for any inconvenience.
+                                </span>
+                            </div>
+
+                        
+
+                            <div class="col-md-12">
+                                <span class="orangeColor">
+                                    Workers' Compensation Insurance Technician Examination:
+                                </span>
+
+                                <span>
+                                    The Workers’ Compensation Insurance Technician exam will be offline for maintenance beginning Thursday, 02/20/2025, and will be back online on Tuesday, 04/15/2025. We apologize for any inconvenience.
+                                </span>
+                            </div>
+
+                        
+
+                            <div class="col-md-12">
+                                <span class="orangeColor">
+                                    Assess.ai Online Exams:
+                                </span>
+
+                                <span>
+                                    Some Online Exams may be unavailable on Friday, April 4, 2025 from 2:00am to 3:00am (PDT) due to system maintenance. We apologize for any inconvenience.
+                                </span>
+                            </div>
+
+                        
+
+
+
+                </div>
+
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="close" data-toggle="collapse" data-target="#broadcastMessages" aria-expanded="false" aria-controls="broadcastMessages" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+
+
+
+        </div>
+
+        <!-- <button type="button" class="btn btn-primary clipboard-activeonhover">Save links on hover</button> -->
+    </div>
+</div>
+
+
+
+                <!-- Include Utility Header -->
+                
+
+<div class="utility-header">
+    <div class="container">
+        <div class="group">
+            <div class="quarter">
+                
+            </div>
+            <div class="three-quarters settings-links ">
+
+                <div>
+
+                    <ul class="utility-links ecos-search-site-container" style="float: right;">
+
+                        
+                            <li><span class="ca-gov-icon-close-line" aria-hidden="true"></span>
+                                <label for="ucUtilityHeader1_txtGoogleSiteSearch">Site Search: </label><input name="ctl00$ucUtilityHeader1$txtGoogleSiteSearch" type="text" id="ucUtilityHeader1_txtGoogleSiteSearch" /><input type="submit" name="ctl00$ucUtilityHeader1$btnGoogleSiteSearch" value="Search" id="ucUtilityHeader1_btnGoogleSiteSearch" />
+
+                            </li>
+                        
+
+                    </ul>
+
+                    <ul class="utility-links ecos-utility-links-right" style="float: right;">
+
+                        
+                            <li class="ecos-site-search-open"><span class="ca-gov-icon-search" aria-hidden="true"></span>
+                                Site Search
+                            </li>
+                        
+
+                        <li><a href="https://www.calcareers.ca.gov/CalHrPublic/GeneralInfo/Help.aspx" id="ucUtilityHeader1_aHelp">
+                            <span class="far fa-question-circle"></span>&nbsp;Help/Tutorials</a></li>
+
+                        <li role="tablist">
+                            <a role="button" data-toggle="collapse" href="#siteSettings" aria-expanded="false"
+                                aria-controls="siteSettings">
+                                <span class="fa fa-cog"></span>
+                                &nbsp;Settings</a>
+
+                        </li>
+
+                        <li id="ucUtilityHeader1_pnlBroadcastMessageLabel">
+                            <a role="button" id="aBroadcastMessage"
+                                style="color: #fdb81e;"
+                                data-toggle="collapse" href="#broadcastMessages"
+                                aria-expanded="false" aria-controls="broadcastMessages">
+
+                                <span class="fa fa-exclamation-triangle"></span>
+                                &nbsp;Messages</a>
+
+                        </li>
+
+                        <li>
+
+                            
+
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Include Branding -->
+                <div class="branding">
+                    <div class="header-cagov-logo">
+                        <a href="https://www.ca.gov/">
+                            <img src="../../images/v5/cagov-logo-white.svg" alt="ca.gov" style="height: 26px;" />
+                        </a>
+                    </div>
+                    <div class="header-organization-banner">
+                        <a href="../../">
+                            <img src="../../images/v5/california-state-jobs-logo.png" id="bannerCCImage" alt="Jobs CA Logo" />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- hash include virtual="v5/ssi/branding.html" -->
+
+                <!-- Include Mobile Controls -->
+                <!-- mobile navigation controls -->
+<div class="mobile-controls">
+
+    <span class="mobile-control toggle-menu">
+    <span class="ca-gov-icon-menu" aria-hidden="true"></span>
+    <span class="sr-only">Menu</span></span>
+    <span class="ecos-mobile-logo">
+        <a href="../../">
+                <img src="../../images/v5/california-state-jobs-logo.png" alt="Jobs Accessible CA Logo" class="img-reponsive" />
+        </a>
+    </span>
+    <span class="mobile-control-group mobile-header-icons">
+    	
+        <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+    </span>
+    <span class="mobile-control toggle-search">
+        <a href="/" class="ecos-search-icon-a">
+            <span class="ca-gov-icon-search" aria-hidden="true"></span>
+            <span class="sr-only">Search</span>
+        </a>
+    </span>
+    <span class="mobile-control-group mobile-menu-icons">
+    	<!-- Add more mobile controls here. These will be on the top right section of the expanded mobile menu -->
+    </span>
+</div>
+
+                <div>
+                    <div class="navigation-search">
+
+                        <!-- Include Navigation -->
+
+                        <nav id="navigation" class="main-navigation megadropdown auto-highlight mobile-closed">
+                            <ul id="nav_list" class="top-level-nav">
+
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/Default.aspx" id="hlHome" class="first-level-link">
+                                        <span class="ca-gov-icon-home"></span>Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/CalHRPublic/Landing/NewToStateservice.aspx" id="hlNewToStateService" class="first-level-link" alt="Get a State Job">
+                                        <span class="ca-gov-icon- fa fa-handshake" aria-hidden="true"></span>Get a State Job</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/CalHRPublic/Landing/StateEmployees.aspx" id="hlStateEmployees" class="first-level-link" alt="State Employees">
+                                        <span class="ca-gov-icon- fa fa-id-badge"></span>
+                                        State Employees
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/CalHRPublic/Landing/Veterans.aspx" id="hlVeterans" class="first-level-link" alt="Veterans">
+                                        <span class="ca-gov-icon- fa-stack-nav fa-lg">
+                                            <i class="ca-gov-icon fa fa-angle-double-up fa-stack-nav-1x" aria-hidden="true"></i>
+                                            <span class="ca-gov-icon ca-gov-icon-favorite fa-stack-nav-2x"></span>
+                                        </span>
+                                        Veterans
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/CalHRPublic/Landing/PersonsWithDisabilities.aspx" id="hlDisabilities" class="first-level-link" alt="Persons with Disabilities">
+                                        <span class="ca-gov-icon- fa fa-wheelchair"></span>Persons with Disabilities</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.calcareers.ca.gov/CalHRPublic/Landing/StateRetirees.aspx" id="hlRetirees" class="first-level-link" alt="State Retirees">
+                                        <span class="ca-gov-icon-capitol"></span>State Retirees</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="hlLogIn" class="first-level-link" href="https://www.calcareers.ca.gov/CalHRPublic/Login.aspx">
+                                        <span class="ca-gov-icon-person"></span>Create Account / Log In
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                        <!-- hash include virtual="v5/ssi/navigation.html" -->
+                    </div>
+                </div>
+            
+
+            
+
+            <div class="header-decoration"></div>
+        </header>
+
+        
+
+        <input type="hidden" name="ctl00$hdnShowHeaderPadding" id="hdnShowHeaderPadding" value="1" />
+
+        <div id="main-content" class="main-content" style='padding-top: 8.625em'>
+            <main class="main-primary">
+
+                
+
+                <div id="cphMainContentWrapper">
+                    
+
+    <style>
+        .btn:hover, .btn:focus, .btn.focus {
+            color: #FDB81E;
+        }
+    </style>
+
+    <div class="section section-auto">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    This Job Posting is no longer available.<br/><br/>
+
+                </div>
+            </div>
+
+            <div id="divbuttons" style="margin-left: 50px;">
+                <div>
+                    <input type="submit" name="ctl00$cphMainContent$btnApply" value="Apply Now" id="cphMainContent_btnApply" class="btn btn-outline-white btn-lg" autocomplete="off" />
+
+                    
+                </div>
+
+                <div style="width: 350px;" class="pt10">
+                    <strong>Application Methods:
+                    </strong>
+
+                    <div id="cphMainContent_rowElectronicAccepted">Electronic (Using your CalCareer Account)</div>
+                    <div id="cphMainContent_rowPostalAccepted">By Mail</div>
+                    <div id="cphMainContent_rowDropOffAccepted">Drop-off</div>
+                </div>
+
+                
+
+                <div class=" ecos-job-button">
+
+                    
+
+                    <div id="cphMainContent_pnlFavoriteJob" class="btn btn-outline-white btn-sm disabled" style="margin: 0;">
+                        <a id="cphMainContent_lbFavoriteJob" href="javascript:__doPostBack(&#39;ctl00$cphMainContent$lbFavoriteJob&#39;,&#39;&#39;)">
+                                    <i class="fa fa-bookmark-o mr5" aria-hidden="true"></i>
+                                    Save Job
+                        </a>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                </div>
+            </main>
+        </div>
+
+        <!-- Include Footer -->
+        
+<!-- Global Footer -->
+<footer id="footer" class="global-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12" style="padding-top: 10px;margin-right:-5rem !important">
+                <ul class="footer-links">
+                    <li><a href="#skip-to-content">Back to Top</a></li>
+                    <li><a href="https://www.calhr.ca.gov/Pages/conditions-of-use.aspx" id="ucGlobalfooter_aConditionsOfUse" title="Conditions of Use" alt="Conditions of Use">Conditions of Use</a></li>
+                    <li><a href="https://www.calhr.ca.gov/Pages/privacy-policy.aspx" id="ucGlobalfooter_aPrivacyPolicy" title="Privacy Policy" alt="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="https://www.calhr.ca.gov/Pages/accessibility.aspx" title="Accessibility" alt="Accessibility">Accessibility</a></li>
+                    <li><a href="https://www.calcareers.ca.gov/CalHrPublic/GeneralInfo/Help.aspx" id="ucGlobalfooter_aContactUs" title="Contact Us" alt="Contact Us">Contact Us</a></li>
+                    <li><a href="https://www.calcareers.ca.gov/CalHrPublic/GeneralInfo/WhatsNew.aspx" id="ucGlobalfooter_aReleaseHistory" title="Release History" alt="Release History">Release History</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1 col-sm-5 col-xs-12" style="margin-left:-2rem;margin-right:5rem">
+                <a href="http://calhr.ca.gov" title="CalHR Site">
+                    <img src="../../images/v5/footer-calhr-logo.png" alt="California Department of Human Resources (CalHR)" />
+                </a>
+            </div>
+            <div class="col-lg-2 col-sm-3 col-xs-12 text-right" style="padding-top: 10px;">
+                <ul class="socialsharer-container">
+                    <!-- GlobalFooter.ascx -->
+                    <li><a href="https://www.facebook.com/jobscagov-1397099267001434/?view_public_for=1397099267001434" target="_blank"><span class="ca-gov-icon-facebook" aria-hidden="true"></span><span class="sr-only">Facebook</span></a></li>
+                    <li><a href="https://twitter.com/CalHR_gov" target="_blank"><span class="ca-gov-icon-twitter" aria-hidden="true"></span><span class="sr-only">twitter</span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCSNFW92Q4q-4enuqwdytIKw" target="_blank"><span class="ca-gov-icon-youtube" aria-hidden="true"></span><span class="sr-only">YouTube</span></a></li>
+                    <li><a href="https://www.linkedin.com/company/california-department-of-human-resources" target="_blank"><span class="ca-gov-icon-linkedin" aria-hidden="true"></span><span class="sr-only">LinkedIn</span></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-1 col-sm-3 col-xs-12" style="padding-top: 10px;">
+                <a href="https://workforcalifornia.ca.gov/" target="_blank" title="Work for California">
+                    <img src="../../images/v5/Work-for-California-logo-Bear-White.png" alt="Work for California" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Statement -->
+    <div class="copyright">
+        <div class="container " style="font-size: small;">
+            <div class="col-md-4">
+                Copyright &copy;
+            <script>document.write(new Date().getFullYear())</script>
+                State of California
+            </div>
+            <div class="col-md-8 tar">
+                Note: documents in Portable Document Format (PDF) require Adobe Acrobat Reader 5.0 
+                    or higher to view <a href="http://get.adobe.com/reader/" >download Adobe Acrobat Reader</a>.
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Extra Decorative Content -->
+<div class="decoration-last">&nbsp;</div>
+
+
+        
+
+<div id='PopupMask' style='position: fixed; width: 100%; display: none; z-index: 1; opacity: .90;'>
+    <div style="width: 33%; position: fixed; top: 30%; left: 33%; border: 0.125em solid darkgray; border-radius: .313em; background-color: whitesmoke; text-align: center;">
+
+
+        <div style="text-align: left; margin: 0.625em;">
+            <span style="font-weight: 600;">Loading</span>
+        </div>
+        <div>
+            <div class="progress" style="margin: 0.625em; border-radius: 0.188em;">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        
+
+
+<div id='ErrorMask' style='position: fixed; width: 100%; display: none; z-index: 1; opacity: .95;'>
+    <div style="width: 33%; position: fixed; top: 30%; left: 33%; border: 0.063em solid gray; border-radius: 0.4em; background-color: whitesmoke; text-align: center;">
+        <!-- added caption,thead and summary to table-->
+        <table style="width: 100%; vertical-align: middle;" summary="An error occurred during your request. Please try again.">
+            <caption class="sr-only">
+                Error Message
+            </caption>
+
+            <tr>
+                <th scope='col' class="theadcss">error</th>
+            </tr>
+
+            <tbody>
+                <tr>
+                    <td colspan="2" style="background-color: gainsboro; color: black; text-align: left; font-weight: bold; border-radius: 0.3125em; padding: 0.1875em;">&nbsp;Error
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="theadcss">Error</th>
+                    <td style="width: 9.375em; margin: 1em; padding: .5em;">
+                        <img src="../../images/common/dialog_error.png" alt="Error Box" height="85" />
+                    </td>
+                    <td style="vertical-align: middle; text-align: left;">
+                        <div style="margin-left: 0.625em; margin-right: 0.625em; padding-bottom: 0.625em;">
+                            <div style="font-size: small; margin-left: 0.625em; margin-bottom: 0.3125em;">
+                                An error occurred during your request. Please try again.
+                            </div>
+
+                            <div>
+                                <input id="btnErrorOk" type="button" onclick="$('#ErrorMask').hide(); $('#divMain').css('opacity', 1.0);" value="OK"
+                                    style="padding: 0.3125em; text-align: center; margin-top: 1.25em; width: 100%;" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+        <div id="ucSessionTimeoutDialog_ctl00">
+	
+
+        <div id='TimerMask' style='width: 100%; display: none; z-index: 1; opacity: .95;'>
+            <div style="width: 33%; position: fixed; top: 30%; left: 33%; border: 1px solid gray; border-radius: 3px; background-color: whitesmoke; text-align: center;">
+
+                <div class="">
+
+                    <div class="" style="background: #046b99; border-radius: 3px; color: white; margin: 1px;">
+                        <div style="font-weight: bold; padding: 2px;">
+                            Session Timeout - Inactivity
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 5px;">
+                        <div class="col-md-4">
+                            <div class="ca-gov-icon- fa fa-clock text-center fa-6x m-t-sm" aria-hidden="true"></div>
+                        </div>
+                        <div class="col-md-8" style="text-align: center;">
+
+                            <div style="margin: 10px;">
+
+                                <p>
+                                    Automatic log out in
+                                </p>
+
+                                
+                                <div style="">
+                                    <div style="font-size: xx-large; text-align: center;">
+                                        <span id="SessionTime2">00:15</span>
+                                    </div>
+                                </div>
+
+                                <div class="" style="position: relative; top: 15px;">
+                                    <p style="font-size: small;">
+                                        Select 'Stay Logged In' below to resume your activity.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="" style="border-top: 1px solid gainsboro; margin: 2px;">
+                        <div class="col-md-4">
+                            <div class="mb10">
+                                <a id="ucSessionTimeoutDialog_btnLogOutNow" title="Log Out Now" alt="Log Out Now" href="javascript:__doPostBack(&#39;ctl00$ucSessionTimeoutDialog$btnLogOutNow&#39;,&#39;&#39;)" style="position: relative; top: 15px; padding-bottom: 10px;">Log Out Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8  ">
+                            <input type="submit" name="ctl00$ucSessionTimeoutDialog$btnStayLoggedIn" value="Stay Logged In" id="ucSessionTimeoutDialog_btnStayLoggedIn" class="btn" autocomplete="off" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <input type="hidden" name="ctl00$ucSessionTimeoutDialog$tmrCountdown" id="ucSessionTimeoutDialog_tmrCountdown" value="1200" />
+
+        <script type="text/javascript">
+            //Session Timeout Code
+            var securedPage = false;
+
+            if (securedPage) {
+                myVar = window.setInterval(updateTimeout, 1000);
+            }
+
+            var showWarningAtMinutesLeft = 5;
+
+            function updateTimeout() {
+
+                var cd = $('#ucSessionTimeoutDialog_tmrCountdown');
+                var currentVal = cd.attr('value') - 1;
+
+                var date = new Date(null);
+                date.setSeconds(currentVal);
+                var timeText = date.toISOString().substr(14, 5);
+
+                var suffix = 'Minutes';
+                if (currentVal < 120) suffix = 'Minute';
+                if (currentVal < 60) suffix = 'Seconds';
+                if (currentVal == 1) suffix = 'Second';
+
+                if (currentVal > 0) {
+                    timeText = timeText.toString() + ' ' + suffix;
+
+                    $('#SessionTime').text(timeText);
+                    $('#SessionTime2').text(timeText);
+
+                    if (currentVal <= showWarningAtMinutesLeft * 60) {
+                        $("#main-content").css('opacity', 0.4);
+                        $('#TimerMask').show();
+                        $("#ucSessionTimeoutDialog_btnStayLoggedIn").focus();
+                    }
+
+                    cd.val(currentVal);
+                }
+                else if (currentVal == 0) {
+                    timeText = 'Logging out ...';
+
+                    $('#SessionTime').text(timeText);
+                    $('#SessionTime2').text(timeText);
+
+                    window.location = 'https://www.calcareers.ca.gov/CalHrSecured/Logout.aspx';
+                }
+            }
+        </script>
+
+    
+</div>
+
+
+
+        
+
+        <input type="submit" name="ctl00$ctl22" value="AccessibilitySubmitButton" style="visibility: hidden;" />
+
+        <!-- For Dynatrace user session tracking -->
+        
+
+		
+			<div id="feedback" style="display: block;">
+				<a href="javascript:showFeedback();">
+					<img src="../../images/v5/clear.gif" title="Provide Feedback" alt="Provide Feedback" />
+				</a>
+			</div>
+			<div id="feedbackModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header" style="height: 40px;">
+
+                        <span class="modal-close" onclick="closeFeedback()">
+                            <div onclick="closeFeedback()">×</div>
+                        </span>
+                        <p class="modal-header-text">&nbsp;</p>
+                    </div>
+                    <div class="modal-body" style="overflow: hidden;">
+                        <iframe src="" id="feedbackform" scrolling="no" title="Feedback form" aria-hidden="true"></iframe>
+                    </div>
+                    <div>
+                        <br style="clear: both;">
+                    </div>
+                </div>
+
+            </div>
+        
+
+        
+        <div>
+	
+            <div class="modal fade" tabindex="-1" id="mdlHelpPageDialog" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header" style="color: #046b99;">
+                            
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="" style="margin: 0; display: inline-block; color: #fdb81e;">
+                                <span class="fa-lg fa fa-question-circle" aria-hidden="true"></span>
+                            </div>
+
+                            <div class="pl10 divh4" style="margin: 0; display: inline-block;">More Information - Job Posting</div>
+
+                        </div>
+
+                        <div class="modal-body">
+
+                            
+                            
+
+                        </div>
+                        <div class="modal-footer">
+                            <a style="cursor: pointer;">
+                                <div class="btn-sm" style="padding: 0;" data-dismiss="modal">Close</div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+        
+</div>
+
+        <div id="glossaryItemPopup" title="Basic dialog" class="glossaryItemPopupWell" style="max-width: 500px; visibility: hidden;">
+            <div id="glossaryItemPopupHeader" class="glossaryItemPopupHeader">Glossary Term</div>
+            <div id="glossaryItemPopupContent" class="glossaryItemPopupContent">Unable to find additional information on the provided term.</div>
+            <div class="glossaryItemPopupFooter">
+                <button class="glossaryItemPopupClose">Close</button>
+            </div>
+        </div>
+
+        <!-- Print Header a nd Footer on every page -->
+
+        <footer class="onlyprint">FOOTER</footer>
+
+        <script src="/bundles/scripts?v=-nUwSrnvqpSQWEqTt3HmGZvPbp96GudVcdEQmWs7fEU1"></script>
+
+
+        
+		<!-- Statewide Alerts Server -->
+
+        <script type="text/javascript">
+            var feedbackbutton = document.getElementById("feedback");
+            feedbackbutton.style.display = "block";
+
+            // When the user clicks the button, open the modal
+            function showFeedback() {
+                var surveyToOpen = "https://www.surveymonkey.com/r/T2L7KMV";
+
+                var viewportWidth = $(window).width();
+
+                if (viewportWidth >= 992) {
+
+                    var modal = document.getElementById('feedbackModal');
+                    var feedbackiframe = document.getElementById('feedbackform');
+                    feedbackiframe.src = surveyToOpen;
+                    modal.style.display = "block";
+                }
+                else {
+                    window.open(surveyToOpen);
+                }
+            }
+
+
+            // Get the &lt;span&gt; element that closes the modal
+            var closeButton = document.getElementsByClassName("modal-close")[0];
+
+            // When the user clicks on &lt;span&gt; (x), close the modal
+            function closeFeedback() {
+                var modal = document.getElementById('feedbackModal');
+                modal.style.display = "none";
+                document.getElementById('feedbackform').src = "";
+            }
+
+        </script>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src=https://www.googletagmanager.com/gtag/js?id=G-GVMXP4J73D></script>
+
+		<script> 
+			window.dataLayer = window.dataLayer || [];
+
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GVMXP4J73D');
+            gtag('config', 'G-69TD0KNT0F');
+        </script>
+
+		<script defer src=https://alert.cdt.ca.gov></script>
+
+		<script type="text/javascript">
+
+            function applyDatePickers() {
+                $(".datePicker:enabled").not("[readonly='readonly']").datepicker({
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '-45:+5',
+                    beforeShow: function (input, inst) {
+                        $('#ui-datepicker-div').css('font-size', '0.93em');
+                        $('#calendarsHidden').val('open');
+                    },
+                    dayNamesMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                });
+            }
+
+            $(document).ready(function () {
+
+                // highlight top navigation when you are the corresponding landing page
+                ecos.topNav.activeSelection();
+
+                //standard docready scripts
+                // Backward compatability fix for removing wrapper on new "sections"
+                $('.main-primary > .section').closest('div.wrapper').removeClass('wrapper');
+
+                ecos.carouselAutoRotate.clickCarousel({
+                    element: '.carousel-media',     // Element can be a class or ID, but only one
+                    interval: 3000                  // set the interval of the click, 1000 equal to one second
+                });
+
+                // Changes the height of the footer to the bottom of the page if there is not enough content
+                ecos.footerPlacement.footerHeight();
+
+                // Adds repsonsiveness to a table
+                ecos.fooTable.defaultTable();
+
+                // Adds the alternating color for the sections on a page
+                ecos.sections.auto();
+
+                // Add sections to the Job Posting
+                ecos.sections.auto({
+                    element: '.jobPosting > div',
+                    classOne: 'section section-understated',
+                    classTwo: 'section',
+                    classThree: 'section section-default'
+                });
+
+                if ($(".ecos-job-posting-apply-section").length) {
+                    ecos.jobPosting.applySection();
+                };
+
+                //$('.branding').fadeTo("fast", 1);
+
+                // add class to how to apply for a State Job
+                $('.ecos-new-to-state-service .section-how-to-apply').addClass('section-transparent');
+                //console.log('done');
+                //console.log($('.section-how-to-apply').lenght);
+
+                //webforms ajax calls
+                Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(BeginRequestHandler);
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+                ecos.site.search();
+                $('.glossaryItemPopupClose').click(function () {
+                    $('#glossaryItemPopup').popup('hide');
+                });
+
+            });
+
+            function applyResponsiveTabs() {
+                // responsive tabs for the My Account section
+                if ($('.ecos-my-account-nav').length) {
+                    ecos.myAccount.tabsResponsive();
+                }
+
+                $('input:file').attr('title', 'file upload control');
+            }
+
+            function applyGlossaryItem() {
+                $('.glossaryItem').click(function (event) {
+                    var item = $(event.target);
+                    var itemTerm = item.html();
+
+                    if (item.attr('glossary-Term') != undefined)
+                        itemTerm = item.attr('glossary-Term');
+
+                    //just in case it fails later
+                    $('#glossaryItemPopupHeader').html(itemTerm);
+                    $('#glossaryItemPopupContent').html('Unable to find additional information on the provided term.');
+
+                    var siteRoot = '';
+
+					$.when(
+						$.ajax({
+							type: "GET",
+							async: false,
+							url: siteRoot + "/api/glossary/getglossaryitembytext?glossaryterm=" + itemTerm,
+							contentType: "application/json; charset=utf-8",
+							dataType: "json",
+							success: function (msg) {
+								//console.log(msg);
+							}
+						})
+					).done(function (data) {
+						$('#glossaryItemPopupHeader').html(data.Term);
+						$('#glossaryItemPopupContent').html(data.Definition);
+					})
+						;
+
+					$('#glossaryItemPopup').popup({
+						//type: 'overlay',
+						type: 'tooltip',
+						vertical: 'bottom',
+						horizontal: 'right',
+						transition: '0.2s all 0.1s',
+						autoopen: 'true',
+						tooltipanchor: event.target,
+						//opacity: .5,
+						offsetleft: 10,
+						offsettop: -20
+					});
+
+				});
+			}
+
+            //Accessibility cleanup on certain controls
+            function applyAccessibilityToDevxItems() {
+
+                setTimeout(function () {
+
+                    $('.devxpressItem ').find('input').each(function (e, sender) {
+
+                        var elem = $(sender)[0];
+
+                        document.getElementById(elem.id).title = 'new title';
+
+                    });
+
+                    $('[role="application"]').each(function (e, sender) {
+                        var elem = $(sender)[0];
+                        $(elem).attr('aria-labelledby', 'application');
+
+                    });
+
+                }
+
+                    , 500)
+            };//settimeout
+
+            function scrollToTop(topOffset) {
+
+                topOffset = typeof topOffset !== 'undefined' ? topOffset : 200;
+
+                $('html,body').animate({
+                    scrollTop: topOffset
+                }, 400, function () {
+                    $(window).scroll()
+                });
+            }
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+
+        </script>
+
+        <noscript>
+            <p>You must enable Javascript to use this site.</p>
+        </noscript>
+
+        
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('img').each(function (i, eimg) {
+                if (!eimg.alt || eimg.alt === "") {
+                    eimg.alt = "State & Department";
+                }
+            });
+
+            //move buttons
+            $('#buttonContainer').empty();
+            var buttons = $('#divbuttons').detach();
+            buttons.hide();
+            buttons.appendTo('#buttonContainer').slideDown('slow');
+
+        });
+
+    </script>
+
+
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+ecos.fooTable.defaultTable(); ecos.sections.auto();//]]>
+</script>
+<script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/17b5f18726d/bf46250qfs/9f1bd2f25652a221_complete.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+//<![CDATA[
+applyGlossaryItem();applyResponsiveTabs();//]]>
+</script>
+</form>
+</body>
+</html>
