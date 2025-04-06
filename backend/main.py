@@ -38,9 +38,9 @@ Base.metadata.create_all(bind=engine)
 class JobBase(BaseModel):
     title: str
     state: str
-    deadline: str
-    pay: str
-    link: Optional[str] = None
+    deadline: Optional[str] = None  # Allow None for deadline
+    pay: Optional[str] = None  # Allow None for pay
+    link: Optional[str] = None  # Allow None for link
 
 class JobCreate(JobBase):
     pass
@@ -52,8 +52,6 @@ class JobOut(JobBase):
 
 # FastAPI instance
 app = FastAPI()
-
-
 
 # Dependency to get DB session
 def get_db():
@@ -68,12 +66,15 @@ def get_db():
 def get_jobs(
     skip: int = 0,
     limit: int = 100,
-    title: str = None,
+    title: Optional[str] = None,
     state: Optional[str] = None,
     pay: Optional[str] = None,
+    deadline: Optional[str] = None,  # Added deadline filter
     db: Session = Depends(get_db)
 ):
     query = db.query(Job)
+    
+    # Filters
     if title:
         query = query.filter(Job.title.contains(title))
     if state:
@@ -81,6 +82,9 @@ def get_jobs(
         query = query.filter(Job.state.in_(states))
     if pay:
         query = query.filter(Job.pay == pay)
+    if deadline:
+        query = query.filter(Job.deadline == deadline)  # Filter by deadline
+    
     jobs = query.offset(skip).limit(limit).all()
     return jobs
 
