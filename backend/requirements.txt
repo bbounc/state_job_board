@@ -3,3 +3,4 @@ uvicorn==0.20.0
 sqlalchemy==1.4.47
 pydantic==1.10.2
 python-dotenv==0.21.1
+psycopg2-binary
