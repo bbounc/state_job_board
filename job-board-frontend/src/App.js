@@ -4,6 +4,9 @@ import Select from 'react-select';
 import Fuse from 'fuse.js';
 import { stateOptions } from './stateOptions';
 import './App.css';
+import { useCallback } from 'react';
+
+const API_URL = process.env.BACKEND_URL
 
 // parsePay helper...
 function parsePay(payStr) {
@@ -42,10 +45,10 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
 
   // Fetch and apply filters
-  const fetchJobs = async () => {
+  const fetchJobs = useCallback(async () => {
     setLoading(true);
     try {
-      const resp = await axios.get('http://localhost:8000/jobs', {
+      const resp = await axios.get(`${API_URL}/jobs`, {
         params: {
           skip: 0,
           limit: 1000,
@@ -69,7 +72,13 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [stateFilter, payFilter]);
+  
+  // And then use it in useEffect like this:
+  useEffect(() => {
+    fetchJobs();
+  }, [fetchJobs]);  // This ensures fetchJobs is memoized and stable
+   
 
   // Fuse for fuzzy title search
   const fuse = useMemo(() => new Fuse(allJobs, {

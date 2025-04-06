@@ -1,5 +1,7 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8000';  // Adjust the URL if needed
+
+
+const API_URL = process.env.BACKEND_URL
 
 export const getJobs = async ({ limit, skip }) => {
     try {
