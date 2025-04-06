@@ -121,7 +121,7 @@ EXCLUDED_TITLES = [
     "State of Michigan Job Openings","State of Hawai'i, Executive Branch", "Job Seekers",".",
     "CURRENT OPENINGS", "Job Opportunities", "State of Colorado Job Opportunities", "for All Job Seekers", "Job Opportunities", 
     "Working Conditions", "State of Utah Job Opportunities", "WorkLife Elevated","Title Details", "Position Information",
-"Delaware Employment Link", "here", "Summary","Minimum Requirements", "Work for Indiana", "Apply Now","A Day in the Life:"
+"Delaware Employment Link", "here", "Summary","Minimum Requirements", "Work for Indiana", "Apply Now","A Day in the Life:", "Additional Documents", "Minimum Qualifications", "Functions" 
 ]
 
 SALARY_LABELS = ["Salary", "Pay", "Compensation", "Annual Salary", "Hiring Range - Min."]

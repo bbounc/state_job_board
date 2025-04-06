@@ -1,26 +1,31 @@
-import sqlite3
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
 import os
 
-# Define the path for the database file
-db_path = os.path.join(os.getcwd(), "jobs.db")
+# Load the environment variables from the .env file
+load_dotenv()
 
-# Define the schema for the jobs table
-create_table_query = """
-CREATE TABLE IF NOT EXISTS jobs (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    state TEXT,
-    title TEXT,
-    pay TEXT,
-    deadline TEXT,
-    link TEXT UNIQUE
-);
-"""
+# Fetch the database URL from the .env file
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Connect to the database and create the table
-conn = sqlite3.connect(db_path)
-cursor = conn.cursor()
-cursor.execute(create_table_query)
-conn.commit()
-conn.close()
+# Database setup using SQLAlchemy
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+# Job model (SQLAlchemy)
+class Job(Base):
+    __tablename__ = "jobs"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    state = Column(String)
+    deadline = Column(String)
+    pay = Column(String)
+    link = Column(String)
+
+# Create database tables (if they don't exist)
+Base.metadata.create_all(bind=engine)
 
 print("Database and table created successfully!")
