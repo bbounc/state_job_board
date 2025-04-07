@@ -13,6 +13,8 @@ from dotenv import load_dotenv
 import locale
 
 SCRAPER_DIR = os.path.join(os.path.dirname(__file__), 'scrapers')
+# Place this at the top level (outside the class)
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 # Function to run all scraper files in the scrapers folder
 def run_scrapers():
@@ -23,7 +25,7 @@ def run_scrapers():
         subprocess.run(['python', file_path], check=True)
 
 # Constants
-FUZZY_THRESHOLD = 90
+FUZZY_THRESHOLD = 75
 TITLE_KEYWORDS = ["title", "Title", "rtltextaligneligible", "JobBulletinTitle", "Working Title","data-careersite-propertyid"]
 
 FIELD_LABELS = {
@@ -102,15 +104,39 @@ STEM_KEYWORDS = [
     "health care technician", "physical science researcher", "scientist", "grants specialist",
     "state administrative manager", "departmental analyst", "ui program associate",
 
-    # Engineering roles (added)
+    # Engineering roles
     "engineer", "engineering", "engineer I", "engineer II", "engineer III", "engineer IV", "engineer V", 
     "program manager engineer", "engineering technician", "engineer program manager", "stormwater engineer",
     "engineering specialist", "civil engineer", "mechanical engineer", "electrical engineer", "environmental engineer",
     "software engineer", "systems engineer", "project engineer", "structural engineer", "chemical engineer",
     "aerospace engineer", "biomedical engineer", "geotechnical engineer", "safety engineer", "process engineer",
     "energy engineer", "systems engineering technician", "construction engineer", "transportation engineer",
-    "materials engineer", "industrial engineer", "network engineer", "telecommunications engineer"
+    "materials engineer", "industrial engineer", "network engineer", "telecommunications engineer", "INFORMATION TECHNOLOGY",
+
+    # Nursing & Healthcare (new additions)
+    "registered nurse", "nurse", "nursing assistant", "nurse practitioner",
+    "aprn", "licensed practical nurse", "lpn", "healthcare worker", "clinical nurse",
+    "public health nurse", "healthcare analyst", "medical researcher", "aprn nurse",
+    "advanced practice registered nurse", "mental health nurse",
+
+    # IT & Databases (new additions)
+    "information technology", "it specialist", "it technician", "it analyst",
+    "it manager", "it support", "it administrator", "cybersecurity specialist",
+    "network administrator", "network technician", "database administrator",
+    "database analyst", "data administrator", "systems administrator",
+
+    # Legal & Law-related (new additions)
+    "lawyer", "attorney", "legal analyst", "compliance officer",
+    "legal consultant", "paralegal", "general counsel", "corporate lawyer",
+    "litigation specialist", "regulatory affairs analyst", "legal researcher",
+
+    # Accounting & Finance (new additions)
+    "accountant", "cpa", "certified public accountant", "tax accountant",
+    "financial auditor", "auditor", "cost accountant", "staff accountant",
+    "budget accountant", "controller", "financial controller",
+    "accounts payable specialist", "accounts receivable specialist"
 ]
+
 
 
 
@@ -146,7 +172,7 @@ class JobScraperSpider(scrapy.Spider):
 
         # Connect to PostgreSQL database (Render database connection)
         try:
-            self.conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+            self.conn = psycopg2.connect("postgresql://db_agdu_user:jPtjXy0aH79w0Ai2ICNOD7XSrzhCY2OL@dpg-cvp9ilc9c44c73c01fpg-a.virginia-postgres.render.com/db_agdu")
             self.cursor = self.conn.cursor()
 
             # Create the jobs table if it doesn't exist
@@ -161,7 +187,8 @@ class JobScraperSpider(scrapy.Spider):
                 )
             ''')
             self.conn.commit()
-            self.logger.info(f"{BLUE_SYMBOL} Connected to the database and created jobs table.")
+            print("right main2.py")
+            self.logger.info(f"{BLUE_SYMBOL} {BLUE_SYMBOL}  YYYYY Connected to the database and created jobs table.")
         except Exception as e:
             self.logger.error(f"Error connecting to the database: {str(e)}")
             raise
@@ -175,6 +202,7 @@ class JobScraperSpider(scrapy.Spider):
     def start_requests(self):
         self.clear_database()
         csv_files = [file for file in os.listdir() if file.endswith(".csv")]
+        print(f"CSV files found: {csv_files}")
         for file in csv_files:
             self.processed_files.append(file)
             state_abbr = file[:2].upper()
@@ -201,102 +229,95 @@ class JobScraperSpider(scrapy.Spider):
         self.logger.error(f"🚫 Failed to fetch URL: {failure.request.meta['job_link']} - {failure.value}")
 
 
-# Set the locale to the US for proper currency formatting
-    
+# Set the locale to the US for proper currency formatti
 
-    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+    def categorize_salary(self, salary_str, is_stem):
+            # If salary is None or empty, return 'N/A'
+            if not salary_str or (isinstance(salary_str, str) and salary_str.strip().lower() in ["na", "n/a", "none", ""]):
+                return 'N/A', True  # STEM jobs without salary can still be inserted
 
-    def categorize_salary(self, salary_str):
-    # If salary is None or empty, return 'N/A'
-        if not salary_str or (isinstance(salary_str, str) and salary_str.strip().lower() in ["na", "n/a", "none", ""]):
-            return 'N/A', False  # False indicates that this should not be added to the database
+            if not isinstance(salary_str, str):
+                salary_str = str(salary_str)  # Ensure it's a string
 
-        if not isinstance(salary_str, str):
-            salary_str = str(salary_str)  # Ensure it's a string
+            def clean_number(salary_str):
+                try:
+                    cleaned = ''.join(c for c in salary_str if c.isdigit() or c == '.')
+                    return float(cleaned) if cleaned else None
+                except ValueError:
+                    return None
 
-        def clean_number(salary_str):
-            # Remove non-numeric characters and return a float or None if invalid
-            try:
-                cleaned = ''.join(c for c in salary_str if c.isdigit() or c == '.')
-                return float(cleaned) if cleaned else None
-            except ValueError:
-                return None
+            clean_salary = clean_number(salary_str)
 
-        # Clean the salary string (remove spaces, dollar signs, commas, etc.)
-        clean_salary = clean_number(salary_str)
+            if clean_salary is None:
+                return 'N/A', False  # Invalid salary, don't add to DB
 
-        # Check if clean salary is a valid number
-        if clean_salary is None:
-            return 'N/A', False  # Invalid salary, don't add to DB
+            # Categorize salary and convert to yearly salary
+            if clean_salary < 500:
+                yearly_salary = clean_salary * 40 * 52
+            elif clean_salary < 10_000:
+                yearly_salary = clean_salary * 12
+            else:
+                yearly_salary = clean_salary
 
-        # Categorize salary and convert to yearly salary
-        if clean_salary < 500:  # Hourly salary
-            yearly_salary = clean_salary * 40 * 52  # Assume 40 hours/week, 52 weeks/year
-        elif clean_salary < 10_000:  # Monthly salary
-            yearly_salary = clean_salary * 12  # Assume 12 months/year
-        else:  # Yearly salary
-            yearly_salary = clean_salary
+            # Main salary threshold (50k)
+            if yearly_salary >= 80_000:
+                return f"${yearly_salary:.2f} per year", True
 
-        # Check if yearly salary meets the threshold
-        if yearly_salary < 50_000:
-            return 'N/A', False  # If salary is below 50k, do not add to the DB
+            # If not above the main threshold, check if it's a STEM job and falls under the secondary threshold
+            if is_stem:
+                # Secondary salary threshold for STEM jobs (e.g., $30,000)
+                if yearly_salary >= 55_000:
+                    return f"${yearly_salary:.2f} per year", True
 
-        # If salary is valid, add a dollar sign and 'per year' to the string
-        salary_str = f"${yearly_salary:.2f} per year"
-        return salary_str, True  # Valid salary, can be added to DB
-
-
+            return 'N/A', False  # Exclude jobs below the threshold
 
     def parse_job_details(self, response):
-        if response.status in [403, 404]:
-            self.logger.warning(f"⚠ Skipping {response.url} - HTTP {response.status}")
-            return
+            if response.status in [403, 404]:
+                self.logger.warning(f"⚠ Skipping {response.url} - HTTP {response.status}")
+                return
 
-        title = self.extract_job_title(response)
-        if not title:
-            self.logger.warning(f"⚠ No valid job title found for {response.url}")
-            return
+            title = self.extract_job_title(response)
+            if not title:
+                self.logger.warning(f"⚠ No valid job title found for {response.url}")
+                return
 
-        description = " ".join(response.css("p::text").getall()).strip()
-        if not description:
-            self.logger.warning(f"⚠ No job description found for {title} - Skipping")
-            return
+            description = " ".join(response.css("p::text").getall()).strip()
+            if not description:
+                self.logger.warning(f"⚠ No job description found for {title} - Skipping")
+                return
 
-        # Check if the job title matches a STEM-related keyword (fuzzy matching)
-        fuzzy_score = max(fuzz.partial_ratio(description.lower(), keyword) for keyword in STEM_KEYWORDS)
+            # Check if the job title matches a STEM-related keyword (fuzzy matching)
+            fuzzy_score = max(fuzz.partial_ratio(description.lower(), keyword) for keyword in STEM_KEYWORDS)
 
-        if fuzzy_score >= FUZZY_THRESHOLD:
-            self.logger.info(f"✅ STEM job found: {title}")
+            if fuzzy_score >= FUZZY_THRESHOLD:
+                self.logger.info(f"✅ STEM job found: {title}")
 
-            plain_text = " ".join(response.xpath("//body//text()").getall())
-            extracted_fields = extract_fields_with_nlp(plain_text)
-            deadline = extracted_fields.get("deadline", "NA")
-            salary = extracted_fields.get("salary", "NA")
+                plain_text = " ".join(response.xpath("//body//text()").getall())
+                extracted_fields = extract_fields_with_nlp(plain_text)
+                deadline = extracted_fields.get("deadline", "NA")
+                salary = extracted_fields.get("salary", "NA")
 
-            # Now call categorize_salary to get the adjusted salary and whether it should be inserted
-            adjusted_salary, should_insert = self.categorize_salary(salary)
+                # Now call categorize_salary to get the adjusted salary and whether it should be inserted
+                adjusted_salary, should_insert = self.categorize_salary(salary, True)
 
-            # If should_insert is False, the job shouldn't be added to the database
-            if should_insert:
-                # Insert job into PostgreSQL database
-                self.cursor.execute('''
-                    INSERT INTO jobs (state, title, pay, deadline, link)
-                    VALUES (%s, %s, %s, %s, %s)
-                    ON CONFLICT (link) DO NOTHING;
-                ''', (
-                    response.meta['state'],
-                    title,
-                    adjusted_salary,
-                    deadline,
-                    response.url
-                ))
-                self.conn.commit()
-                self.logger.info(f"✅ Job inserted into DB: {title}")
+                if should_insert:
+                    self.cursor.execute('''
+                        INSERT INTO jobs (state, title, pay, deadline, link)
+                        VALUES (%s, %s, %s, %s, %s)
+                        ON CONFLICT (link) DO NOTHING;
+                    ''', (
+                        response.meta['state'],
+                        title,
+                        adjusted_salary,
+                        deadline,
+                        response.url
+                    ))
+                    self.conn.commit()
+                    self.logger.info(f"✅ Job inserted into DB: {title}")
+                else:
+                    self.logger.info(f"❌ Job excluded based on salary: {title}")
             else:
-                self.logger.info(f"❌ Job excluded based on salary: {title}")
-        else:
-            self.logger.info(f"❌ Not a STEM job: {title}")
-
+                self.logger.info(f"❌ Not a STEM job: {title}")
 
         
 
@@ -319,7 +340,7 @@ class JobScraperSpider(scrapy.Spider):
 
 if __name__ == '__main__':
     #run_scrapers()
-    max_links = 1000000
+    max_links = 100000
 
     process = CrawlerProcess({
         'CONCURRENT_REQUESTS': 32,
