@@ -172,7 +172,7 @@ class JobScraperSpider(scrapy.Spider):
 
         # Connect to PostgreSQL database (Render database connection)
         try:
-            self.conn = psycopg2.connect("postgresql://db_agdu_user:jPtjXy0aH79w0Ai2ICNOD7XSrzhCY2OL@dpg-cvp9ilc9c44c73c01fpg-a.virginia-postgres.render.com/db_agdu")
+            self.conn = psycopg2.connect(os.getenv("DATABASE_URL"))
             self.cursor = self.conn.cursor()
 
             # Create the jobs table if it doesn't exist
@@ -187,8 +187,7 @@ class JobScraperSpider(scrapy.Spider):
                 )
             ''')
             self.conn.commit()
-            print("right main2.py")
-            self.logger.info(f"{BLUE_SYMBOL} {BLUE_SYMBOL}  YYYYY Connected to the database and created jobs table.")
+            self.logger.info(f"{BLUE_SYMBOL} Connected to the database and created jobs table.")
         except Exception as e:
             self.logger.error(f"Error connecting to the database: {str(e)}")
             raise
@@ -202,7 +201,6 @@ class JobScraperSpider(scrapy.Spider):
     def start_requests(self):
         self.clear_database()
         csv_files = [file for file in os.listdir() if file.endswith(".csv")]
-        print(f"CSV files found: {csv_files}")
         for file in csv_files:
             self.processed_files.append(file)
             state_abbr = file[:2].upper()
